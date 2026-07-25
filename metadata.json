@@ -1,0 +1,8 @@
+{
+  "name": "berlian kontraktor",
+  "description": "template rumah mewah & kontraktor terpercaya",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
