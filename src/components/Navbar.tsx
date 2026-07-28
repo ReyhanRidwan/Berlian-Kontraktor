@@ -47,8 +47,8 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-zinc-950/90 backdrop-blur-md shadow-lg border-b border-zinc-900 py-3"
-          : "bg-transparent py-5"
+          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3"
+          : "bg-[#FAF8F5]/80 backdrop-blur-sm py-4 border-b border-stone-200/40"
       }`}
       id="main-navigation-nav"
     >
@@ -61,7 +61,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
             onClick={() => handleNavClick("home")}
             id="navbar-brand-logo"
           >
-            <div className="h-10 w-10 p-1 bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
+            <div className="h-10 w-10 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
               <img
                 src={IMAGES.companyLogo}
                 alt="Berlian Kontraktor Logo"
@@ -69,25 +69,25 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black text-white tracking-wider leading-none">
+              <span className="text-lg sm:text-xl font-black text-stone-900 tracking-wider leading-none">
                 BERLIAN
               </span>
-              <span className="text-[10px] font-extrabold text-orange-500 tracking-widest uppercase mt-0.5">
+              <span className="text-[10px] font-extrabold text-orange-600 tracking-widest uppercase mt-0.5">
                 KONTRAKTOR
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-1 bg-zinc-950/40 p-1.5 rounded-full border border-zinc-900" id="desktop-links-container">
+          <div className="hidden md:flex items-center gap-1 bg-stone-100/90 p-1.5 rounded-full border border-stone-200/80" id="desktop-links-container">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`px-5 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 ${
                   activeTab === item.id
-                    ? "bg-orange-600 text-white shadow-md shadow-orange-600/30 font-extrabold"
-                    : "text-zinc-400 hover:text-white"
+                    ? "bg-orange-600 text-white shadow-md shadow-orange-600/20 font-extrabold"
+                    : "text-stone-600 hover:text-stone-900"
                 }`}
                 id={`navitem-btn-${item.id}`}
               >
@@ -99,14 +99,14 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           {/* Call-to-Action WhatsApp Hub Button */}
           <div className="hidden lg:block">
             <a
-              href="https://wa.me/6281389113085?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
+              href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-orange-600 text-white hover:text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-zinc-800 hover:border-orange-600 transition-all shadow-md group"
+              className="inline-flex items-center gap-2 bg-stone-900 hover:bg-orange-600 text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-stone-800 hover:border-orange-600 transition-all shadow-md group"
               id="cta-wa-nav"
             >
-              <Phone className="w-4 h-4 text-orange-500 group-hover:text-white transition-colors" />
-              <span>+62 813-8911-3085</span>
+              <Phone className="w-4 h-4 text-orange-400 group-hover:text-white transition-colors" />
+              <span>+62 857-1591-0161</span>
             </a>
           </div>
 
@@ -114,7 +114,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white focus:outline-none"
+              className="p-2 rounded-lg bg-stone-100 text-stone-700 hover:text-stone-900 border border-stone-200 focus:outline-none"
               aria-label="Toggle Navigation Menu"
               id="mobile-nav-toggle"
             >
@@ -132,7 +132,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-zinc-950 border-b border-zinc-900"
+            className="md:hidden bg-[#FAF8F5] border-b border-stone-200 shadow-xl"
             id="mobile-links-panel"
           >
             <div className="px-4 pt-3 pb-6 space-y-2 flex flex-col">
@@ -143,16 +143,16 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
                   className={`w-full text-left px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider transition-all ${
                     activeTab === item.id
                       ? "bg-orange-600 text-white"
-                      : "text-zinc-400 hover:bg-zinc-900 hover:text-white"
+                      : "text-stone-700 hover:bg-stone-100 hover:text-stone-900"
                   }`}
                   id={`navitem-mobile-${item.id}`}
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-4 border-t border-zinc-900">
+              <div className="pt-4 border-t border-stone-200">
                 <a
-                  href="https://wa.me/6281389113085?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
+                  href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs py-3 rounded-xl uppercase tracking-wider transition-all"

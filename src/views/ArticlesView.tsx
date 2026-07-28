@@ -18,14 +18,14 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
   const activeArticle = ARTICLES_DATA.find((art) => art.id === selectedArticle);
 
   const handleShareWa = (title: string) => {
-    const text = `Saya baru saja membaca artikel menarik ini dari Berlian Kontraktor Bogor: "${title}". Sangat direkomendasikan bagi yang ingin mendirikan rumah atau ruko!`;
-    window.open(`https://wa.me/6281389113085?text=${encodeURIComponent(text)}`, "_blank");
+    const text = `Saya baru saja membaca artikel menarik ini dari Berlian Kontraktor: "${title}". Sangat direkomendasikan bagi yang ingin mendirikan rumah atau ruko!`;
+    window.open(`https://wa.me/6285715910161?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   // Full Read Mode Layout
   if (activeArticle) {
     return (
-      <div className="font-sans text-white bg-zinc-950 py-12" id="full-article-reader">
+      <div className="font-sans text-stone-900 bg-[#FAF8F5] py-12" id="full-article-reader">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-24">
           
           {/* Back button to list */}
@@ -34,7 +34,7 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
               setSelectedArticle(null);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="inline-flex items-center gap-2 text-xs font-black uppercase text-orange-500 hover:text-white transition-colors mb-8 cursor-pointer group"
+            className="inline-flex items-center gap-2 text-xs font-black uppercase text-orange-600 hover:text-stone-900 transition-colors mb-8 cursor-pointer group"
             id="btn-back-article-archive"
             type="button"
           >
@@ -44,33 +44,33 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
 
           {/* Heading meta */}
           <div className="space-y-4 mb-8" id="reader-heading-meta">
-            <span className="text-xs bg-orange-600/15 text-orange-500 font-extrabold px-3 py-1 rounded-full uppercase tracking-widest block w-fit">
+            <span className="text-xs bg-orange-600/15 text-orange-700 font-extrabold px-3 py-1 rounded-full uppercase tracking-widest block w-fit">
               {activeArticle.category}
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4.5xl font-black uppercase tracking-tight text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4.5xl font-black uppercase tracking-tight text-stone-900 leading-tight">
               {activeArticle.title}
             </h1>
 
             {/* Meta values */}
-            <div className="flex flex-wrap items-center gap-6 text-xs text-zinc-500 pt-2 border-b border-zinc-900 pb-6">
+            <div className="flex flex-wrap items-center gap-6 text-xs text-stone-600 pt-2 border-b border-stone-200 pb-6">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-orange-500" />
+                <Calendar className="w-4 h-4 text-orange-600" />
                 <span>Rilis: {activeArticle.date}</span>
               </div>
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4 text-orange-500" />
+                <User className="w-4 h-4 text-orange-600" />
                 <span>Penulis: {activeArticle.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-orange-500" />
+                <Clock className="w-4 h-4 text-orange-600" />
                 <span>Estimasi: {activeArticle.readTime}</span>
               </div>
             </div>
           </div>
 
-          {/* Featured Image wrapper with Fixed Aspect to prevent shift */}
+          {/* Featured Image wrapper */}
           {activeArticle.image && (
-            <div className="mb-10 rounded-2xl overflow-hidden border border-zinc-850 shadow-2xl h-[280px] sm:h-[400px]">
+            <div className="mb-10 rounded-2xl overflow-hidden border border-stone-200 shadow-md h-[280px] sm:h-[400px]">
               <OptimizedImage
                 src={activeArticle.image}
                 alt={activeArticle.title}
@@ -81,12 +81,11 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
           )}
 
           {/* Main Full Rich Content Body */}
-          <div className="prose prose-invert md:prose-lg max-w-none text-zinc-300 text-sm md:text-base leading-relaxed space-y-6" id="reader-articles-html">
+          <div className="prose max-w-none text-stone-800 text-sm md:text-base leading-relaxed space-y-6" id="reader-articles-html">
             {activeArticle.content.split("\n\n").map((para, pIdx) => {
-              // Simple check for bold-ed points or lists
               if (para.startsWith("1. ") || para.startsWith("2. ") || para.startsWith("3. ") || para.startsWith("4. ") || para.startsWith("5. ")) {
                 return (
-                  <p key={pIdx} className="pl-4 border-l-2 border-orange-600 bg-zinc-900/30 p-4 rounded-r-lg font-medium text-zinc-200">
+                  <p key={pIdx} className="pl-4 border-l-4 border-orange-600 bg-[#F4F0E8] p-4 rounded-r-lg font-medium text-stone-900 shadow-sm">
                     {para}
                   </p>
                 );
@@ -96,15 +95,15 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
           </div>
 
           {/* Bottom sharing footer */}
-          <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="mt-16 pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-center sm:text-left">
-              <span className="text-zinc-500 text-xs block uppercase">Butuh Konsultasi Terkait Topik Ini?</span>
-              <span className="text-white font-extrabold text-sm block mt-0.5">Tanyakan Langsung pada Penulis Artikel</span>
+              <span className="text-stone-500 text-xs block uppercase font-medium">Butuh Konsultasi Terkait Topik Ini?</span>
+              <span className="text-stone-900 font-extrabold text-sm block mt-0.5">Tanyakan Langsung pada Penulis Artikel</span>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={() => handleShareWa(activeArticle.title)}
-                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-black text-xs uppercase px-6 py-3 rounded-lg transition-all"
+                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-black text-xs uppercase px-6 py-3 rounded-lg transition-all shadow-md cursor-pointer"
                 id="btn-share-readers-wa"
               >
                 <Share2 className="w-4 h-4" />
@@ -115,7 +114,7 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
                   setSelectedArticle(null);
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
-                className="bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase px-6 py-3 rounded-lg"
+                className="bg-stone-200 hover:bg-stone-300 text-stone-800 font-bold text-xs uppercase px-6 py-3 rounded-lg cursor-pointer"
                 id="btn-return-archive"
               >
                 Katalog Artikel
@@ -130,26 +129,26 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
 
   // List / Grid Mode Layout
   return (
-    <div className="font-sans text-white bg-zinc-950" id="articles-archive-view">
+    <div className="font-sans text-stone-900 bg-[#FAF8F5]" id="articles-archive-view">
       
       {/* 1. HEADER SECTION */}
-      <header className="relative py-24 md:py-32 bg-zinc-900 border-b border-zinc-800 overflow-hidden" id="articles-header">
-        <div className="absolute inset-0 bg-radial-gradient from-orange-600/10 via-zinc-950 to-zinc-950 opacity-85" />
+      <header className="relative py-24 md:py-32 bg-[#F4F0E8] border-b border-stone-200 overflow-hidden" id="articles-header">
+        <div className="absolute inset-0 bg-gradient-to-tr from-orange-600/10 via-amber-500/5 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-orange-500 font-bold tracking-widest text-xs uppercase block mb-2">
+          <span className="text-orange-600 font-extrabold tracking-widest text-xs uppercase block mb-2">
             PANDUAN PEMILIK HUNIAN BOGOR
           </span>
-          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-stone-900 uppercase tracking-tight">
             ARTIKEL DAN EDUKASI SIPIL
           </h1>
-          <p className="mt-4 text-zinc-400 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mt-4 text-stone-600 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-normal">
             Temukan rujukan perhitungan RAB tepercaya, rahasia menahan rembesan bocor dinding Bogor, tata cara SIMBG, hingga pemilihan konsep tropis yang fungsional.
           </p>
         </div>
       </header>
 
-      {/* 2. ARCHIVE CATALOG GRID (Exactly 5 articles) */}
+      {/* 2. ARCHIVE CATALOG GRID */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="articles-list-grid">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ARTICLES_DATA.map((art) => (
@@ -163,7 +162,7 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
                 setSelectedArticle(art.id);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="bg-zinc-900 border border-zinc-850 rounded-xl overflow-hidden hover:border-orange-600/45 transition-all shadow-md group cursor-pointer flex flex-col justify-between"
+              className="bg-white border border-stone-200 rounded-xl overflow-hidden hover:border-orange-500/40 transition-all shadow-sm hover:shadow-md group cursor-pointer flex flex-col justify-between"
               id={`archive-card-${art.id}`}
             >
               <div>
@@ -177,28 +176,28 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
                 )}
                 
                 <div className="p-6">
-                  <span className="text-[10px] bg-orange-600/10 text-orange-500 font-black px-2.5 py-1 rounded block w-fit uppercase tracking-widest mb-3">
+                  <span className="text-[10px] bg-orange-600/10 text-orange-600 font-extrabold px-2.5 py-1 rounded block w-fit uppercase tracking-widest mb-3">
                     {art.category}
                   </span>
                   
-                  <h2 className="text-base font-black text-white uppercase leading-snug mb-3 group-hover:text-orange-500 transition-all line-clamp-2">
+                  <h2 className="text-base font-extrabold text-stone-900 uppercase leading-snug mb-3 group-hover:text-orange-600 transition-all line-clamp-2">
                     {art.title}
                   </h2>
                   
-                  <p className="text-xs text-zinc-400 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-stone-600 line-clamp-3 leading-relaxed">
                     {art.summary}
                   </p>
                 </div>
               </div>
 
               {/* Card Footer Indicators */}
-              <div className="p-6 pt-3 border-t border-zinc-850/60 flex items-center justify-between text-[10px] text-zinc-500">
+              <div className="p-6 pt-3 border-t border-stone-200 flex items-center justify-between text-[10px] text-stone-500">
                 <div className="flex items-center gap-1.5">
-                  <User className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <User className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                   <span>{art.author}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                  <Clock className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                   <span>{art.readTime}</span>
                 </div>
               </div>

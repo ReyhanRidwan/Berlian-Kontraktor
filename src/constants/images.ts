@@ -34,8 +34,9 @@ export const IMAGES = {
   companyLogo: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1784889320/f0e0f888-b35a-42d1-aff6-13985e5bb7fb.png"),
 
   // Hero section
-  hero1: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941841/slide2_vlhgia.jpg"),
-  hero2: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941396/john-fornander-Id7u0EkTjBE-unsplash_p7ftfx.jpg"),
+  hero1: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
+  hero2: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
+  hero3: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
 
   // Services highlight
   serviceHighlight: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941746/naksha-banwao-3ddHcjHmiGw-unsplash_jdslxv.jpg"),

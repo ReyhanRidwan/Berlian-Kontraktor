@@ -8,59 +8,59 @@ import { IMAGES } from "./constants/images";
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: "bangun-baru",
-    title: "Bangun Rumah Baru",
+    id: "konstruksi-pembangunan",
+    title: "Konstruksi & Pembangunan",
     icon: "Hammer",
     image: IMAGES.serviceNewBuild,
-    description: "Layanan konstruksi komprehensif mulai dari pembersihan lahan, pembuatan fondasi kokoh, struktur beton bertulang, hingga pengerjaan finishing berkualitas premium.",
+    description: "Pembangunan rumah tinggal, gedung komersial, gudang industri, dan fasilitas umum dari nol hingga selesai.",
     features: [
-      "Perencanaan struktur bersertifikat (Sipil)",
-      "Penggunaan material SNI berkualitas tinggi",
-      "Sistem kelayakan fondasi & anti-rayap terpadu",
-      "Garansi pemeliharaan pasca-konstruksi hingga 12 bulan",
-      "Laporan progres mingguan digital transparan"
+      "Pembangunan Rumah Tinggal & Villa",
+      "Konstruksi Gedung Komersial & Kantor",
+      "Pembangunan Gudang Industri & Fasilitas Umum",
+      "Perencanaan Struktur & Fondasi Kokoh",
+      "Laporan Progres Pengerjaan Tepat Waktu"
     ]
   },
   {
-    id: "renovasi-total",
-    title: "Renovasi Rumah & Bangunan",
+    id: "renovasi-remodeling",
+    title: "Renovasi & Remodeling",
     icon: "Wrench",
     image: IMAGES.serviceRenovation,
-    description: "Solusi perbaikan rumah, baik renovasi sebagian (parsial) seperti kamar tidur, dapur, kamar mandi, penambahan lantai (dak), hingga rekonstruksi total bangunan lama Anda.",
+    description: "Renovasi kantor, villa, gedung, dan hunian dengan hasil modern dan fungsional.",
     features: [
-      "Analisis kekuatan struktur lama sebelum pengerjaan",
-      "Pekerjaan rapi tanpa mengganggu tetangga sekitar",
-      "Estimasi waktu presisi dengan gantt chart proyek",
-      "Optimalisasi tata ruang untuk sirkulasi & cahaya alami",
-      "Sistem pembuangan limbah konstruksi yang bersih"
+      "Renovasi Kantor, Villa, Ruko & Gedung",
+      "Remodeling Interior & Fasad Eksterior",
+      "Perbaikan & Peremajaan Struktur Bangunan",
+      "Pengoptimalan Tata Ruang Modern & Fungsional",
+      "Pengerjaan Rapi & Sesuai Anggaran"
     ]
   },
   {
-    id: "arsitektur-interior",
-    title: "Desain Arsitektur & Interior",
+    id: "interior-plafon",
+    title: "Interior & Plafon",
     icon: "Paintbrush",
     image: IMAGES.serviceArchitecture,
-    description: "Wujudkan visualisasi ruang impian lewat rendering 3D fotorealistis, cetak biru (DED), gambar kerja teknis, tata letak furnitur kustom, dan perencanaan estetika interior.",
+    description: "Pemasangan plafon gypsum & PVC, partisi gypsum, dan pekerjaan interior lainnya.",
     features: [
-      "Gambar konsep arsitektur & denah 3D Interaktif",
-      "Desain Interior kustom dengan RAB material terperinci",
-      "Penyusunan DED (Detailed Engineering Design) lengkap untuk IMB/PBG",
-      "Konsultasi pemilihan palet warna & pencahayaan",
-      "Analisis ergonomi ruang untuk fungsi maksimal"
+      "Pemasangan Plafon Gypsum & PVC",
+      "Pemasangan Partisi Gypsum & Sekat Ruang",
+      "Desain & Pengerjaan Elemen Interior Modern",
+      "Pengecatan & Finishing Rapi Halus",
+      "Material Berkualitas Tinggi & Presisi"
     ]
   },
   {
-    id: "manajemen-proyek",
-    title: "Project Management & Supervisi",
+    id: "perbaikan-maintenance",
+    title: "Perbaikan & Maintenance",
     icon: "ShieldCheck",
     image: IMAGES.serviceContractor,
-    description: "Pengawasan ahli secara berkala oleh tim insinyur sipil profesional untuk memastikan kualitas material, ketepatan metode kerja, manajemen rantai pasok, dan keselamatan kerja.",
+    description: "Perbaikan plafon bocor/jebol, perawatan bangunan, dan pekerjaan sipil ringan.",
     features: [
-      "Inspeksi kualitas material masuk (Quality Control)",
-      "Audit ketepatan dimensi sirkulasi & kemiringan struktur",
-      "Penerapan standar K3 (Keselamatan & Kesehatan Kerja)",
-      "Manajemen anggaran ketat guna mencegah pembengkakan biaya",
-      "Penyediaan tenaga sipil ahli bersertifikat resmi"
+      "Perbaikan Plafon Bocor & Jebol",
+      "Perawatan Rutin & Pemeliharaan Bangunan",
+      "Pekerjaan Sipil Ringan & Retak Dinding",
+      "Inspeksi Atap, Waterproofing & Sanitasi",
+      "Layanan Tanggap & Hasil Berkualitas"
     ]
   }
 ];

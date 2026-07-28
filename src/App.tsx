@@ -64,7 +64,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-950 font-sans selection:bg-orange-600 selection:text-white" id="main-app-container">
+    <div className="flex flex-col min-h-screen bg-[#FAF8F5] font-sans selection:bg-orange-600 selection:text-white" id="main-app-container">
       {/* Scroll restore trigger on active view transition */}
       <ScrollToTop currentTab={activeTab} />
 
@@ -95,7 +95,7 @@ export default function App() {
 
       {/* Persistent Flashing Floating WhatsApp Consultation Bubble */}
       <a
-        href="https://wa.me/6281389113085?text=Halo%20Berlian%20Kontraktor,%20saya%20ingin%20konsultasi%20layanan%20jasa%20konstruksi"
+        href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20ingin%20konsultasi%20layanan%20jasa%20konstruksi"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 p-4 bg-orange-600 hover:bg-orange-700 text-white rounded-full shadow-2xl flex items-center justify-center transition-all group hover:scale-105 active:scale-95"

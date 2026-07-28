@@ -70,7 +70,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full rounded-xl overflow-hidden select-none cursor-ew-resize border border-zinc-800 ${heightClass}`}
+      className={`relative w-full rounded-xl overflow-hidden select-none cursor-ew-resize border border-stone-300 shadow-sm ${heightClass}`}
       id={`ba-slider-${beforeImage.substring(beforeImage.length - 6)}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
@@ -127,7 +127,7 @@ export default function BeforeAfterSlider({
       {/* Help tooltip overlay instruction (disappears when manipulated) */}
       {sliderPosition === 50 && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 animate-pulse">
-          <div className="bg-zinc-950/80 backdrop-blur px-4 py-2 rounded-lg border border-zinc-800 text-center text-xs text-white">
+          <div className="bg-stone-900/85 backdrop-blur px-4 py-2 rounded-lg border border-stone-700 text-center text-xs text-white shadow-lg">
             Geser Slider untuk Perbandingan Sebelum/Sesudah
           </div>
         </div>

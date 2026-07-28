@@ -4,206 +4,296 @@
  */
 
 import { motion } from "motion/react";
-import { Shield, Eye, Flame, Award, BookOpen, Clock, Heart } from "lucide-react";
-import { IMAGES } from "../constants/images";
-import OptimizedImage from "../components/OptimizedImage";
+import { Eye, Award, Clock, DollarSign, FileText, ShieldCheck, Users, Target, CheckCircle2, Building2 } from "lucide-react";
 
 export default function AboutView() {
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.12
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
 
-  const missions = [
+  const whyChooseUs = [
     {
-      title: "Material Berstandar SNI",
-      desc: "Menjamin kekuatan struktural jangka panjang dengan mewajibkan bahan bangunan berlabel SNI resmi.",
-      icon: <Shield className="w-5 h-5 text-orange-500" />
+      title: "Berpengalaman",
+      desc: "Telah menangani berbagai proyek renovasi & pembangunan di Jabodetabek",
+      icon: <Award className="w-5 h-5 text-orange-600" />
     },
     {
-      title: "Desain Berkelanjutan",
-      desc: "Merekayasa tata ruang arsitektur yang mengutamakan ventilasi silang, pencahayaan alami, dan efisiensi energi.",
-      icon: <Flame className="w-5 h-5 text-orange-500" />
+      title: "Tim Profesional",
+      desc: "Didukung tenaga kerja terampil dan berpengalaman di bidangnya",
+      icon: <Users className="w-5 h-5 text-orange-600" />
     },
     {
-      title: "RAB Mengikat & Transparan",
-      desc: "Mencegah pembengkakan anggaran klien lewat kontrak kerja tertulis yang mengikat tanpa ada biaya tersembunyi.",
-      icon: <Award className="w-5 h-5 text-orange-500" />
+      title: "Harga Transparan",
+      desc: "RAB detail dan jelas, tanpa biaya tersembunyi",
+      icon: <DollarSign className="w-5 h-5 text-orange-600" />
     },
     {
-      title: "Pemberdayaan Tukang Lokal",
-      desc: "Melatih serta mensertifikasi tukang bangunan lokal agar menguasai metode kerja modern dan disiplin keselamatan K3.",
-      icon: <Heart className="w-5 h-5 text-orange-500" />
+      title: "Tepat Waktu",
+      desc: "Komitmen penyelesaian proyek sesuai jadwal yang disepakati",
+      icon: <Clock className="w-5 h-5 text-orange-600" />
+    },
+    {
+      title: "Laporan Berkala",
+      desc: "Update progres proyek secara mingguan kepada klien",
+      icon: <FileText className="w-5 h-5 text-orange-600" />
+    },
+    {
+      title: "Garansi Pekerjaan",
+      desc: "Jaminan kualitas hasil kerja untuk kepuasan klien",
+      icon: <ShieldCheck className="w-5 h-5 text-orange-600" />
     }
   ];
 
+  const missions = [
+    "Memberikan layanan konstruksi dan renovasi dengan standar kualitas tinggi.",
+    "Menjalin hubungan kerja yang profesional dan saling menguntungkan dengan klien.",
+    "Mengembangkan kompetensi tim secara berkelanjutan.",
+    "Menyelesaikan setiap proyek tepat waktu dan sesuai anggaran.",
+    "Mengutamakan keselamatan kerja dan kelestarian lingkungan."
+  ];
+
   return (
-    <div className="font-sans text-white bg-zinc-950" id="about-us-view-container">
+    <div className="font-sans text-stone-900 bg-[#FAF8F5]" id="about-us-view-container">
       
       {/* 1. HEADER SECTION */}
-      <header className="relative py-24 md:py-32 bg-zinc-900 border-b border-zinc-800 overflow-hidden" id="about-header">
-        <div className="absolute inset-0 bg-gradient-to-tr from-orange-600/10 via-zinc-950 to-zinc-950" />
+      <header className="relative py-24 md:py-32 bg-[#F4F0E8] border-b border-stone-200 overflow-hidden" id="about-header">
+        <div className="absolute inset-0 bg-gradient-to-tr from-orange-600/10 via-amber-500/5 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-orange-500 font-bold tracking-widest text-xs uppercase block mb-2">
+          <span className="text-orange-600 font-extrabold tracking-widest text-xs uppercase block mb-2">
             PROFIL BERLIAN KONTRAKTOR
           </span>
-          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-stone-900 uppercase tracking-tight">
             KOKOH, PRESISI & TERPERCAYA
           </h1>
-          <p className="mt-4 text-zinc-400 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-light">
-            Didirikan atas semangat mengedepankan kualitas sipil sejati di Bogor Barat. Kami memandu Anda memvisualisasikan rancangan impian hingga direalisasikan di lapangan.
+          <p className="mt-4 text-stone-600 text-xs md:text-sm max-w-3xl mx-auto leading-relaxed font-normal">
+            PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan. Kami melayani wilayah Jabodetabek dengan komitmen hasil kerja berkualitas tinggi, tepat waktu, dan sesuai anggaran.
           </p>
         </div>
       </header>
 
-      {/* 2. FOUNDER SECTION (Only 1 person - Ir. Hendra Wijaya) */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="about-founder-section">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Large Artistic Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-6 relative group"
-            id="founder-photo-wrapper"
-          >
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-orange-600 to-amber-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-all duration-700 pointer-events-none" />
-            
-            <div className="relative rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
-              <OptimizedImage
-                src={IMAGES.founder}
-                alt="Ir. Hendra Wijaya - CEO & Founder Berlian Kontraktor"
-                wrapperClassName="aspect-square h-[300px] sm:h-[450px] lg:h-[500px]"
-                className="scale-100 group-hover:scale-[1.02] transition-transform duration-500"
-              />
+      {/* 2. TENTANG KAMI SECTION */}
+      <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" id="about-company-section">
+        <div className="bg-white p-8 md:p-12 rounded-2xl border border-stone-200 shadow-sm space-y-6" id="company-profile-box">
+          <div className="flex items-center gap-2.5">
+            <div className="p-2.5 bg-orange-600/10 rounded-lg text-orange-600">
+              <Building2 className="w-6 h-6" />
             </div>
-
-            {/* Float sign tag overlay */}
-            <div className="absolute bottom-6 left-6 right-6 bg-zinc-900/95 backdrop-blur-md border border-zinc-800/80 p-5 rounded-xl shadow-xl flex items-center justify-between">
-              <div>
-                <h4 className="text-sm font-black text-white uppercase tracking-wide">
-                  Ir. Hendra Wijaya
-                </h4>
-                <p className="text-[10px] text-orange-500 font-extrabold uppercase mt-0.5">
-                  CEO & Founder Berlian Kontraktor
-                </p>
-              </div>
-              <div className="text-[10px] text-zinc-500 font-mono">
-                REG NO. 32-019-IPM
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Inspirational Biography & Quote */}
-          <div className="lg:col-span-6 space-y-6" id="founder-biography-text">
-            <span className="text-xs bg-orange-600/10 text-orange-500 font-extrabold px-3 py-1 rounded tracking-widest uppercase block w-fit">
-              PEMIMPIN & INSINYUR SIPIL
+            <span className="text-xs text-orange-600 font-extrabold tracking-widest uppercase">
+              🏢 TENTANG KAMI
             </span>
-            
-            <h2 className="text-2xl md:text-3.5xl font-black uppercase text-white tracking-tight leading-tight">
-              DIBANGUN DI ATAS DEDIKASI NYATA
-            </h2>
-            
-            <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-              Selamat datang di Berlian Kontraktor. Saya memulai karir sebagai asisten pengawas lapangan di proyek-proyek perumahan Bogor sejak puluhan tahun silam. Dari sana, saya mendapati banyak ketimpangan praktik di mana kekuatan konstruksi sering dikorbankan demi efisiensi biaya yang tidak jujur.
-            </p>
-
-            <blockquote className="relative p-6 bg-zinc-900 rounded-xl border-l-4 border-orange-600 text-xs md:text-sm font-light italic leading-relaxed text-zinc-200">
-              “Kami tidak sekadar menumpuk batu bata dan mengecor beton; kami membangun ruang bagi mimpi-mimpi keluarga bertumbuh dengan aman. Pondasi yang kuat adalah janji yang kami pegang teguh.”
-            </blockquote>
-
-            <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-              Atas dasar idealisme itulah Berlian Kontraktor dilahirkan. Setiap mandor terikat oleh lembar pengawasan mutu, asisten arsitek wajib menghitung presisi pembesian beton bertulang, dan estimator menyajikan transparansi nominal rupiah. Komitmen ini membuat kami terus tumbuh dari rekomendasi mulut ke mulut keluarga Bogor.
-            </p>
           </div>
+          
+          <h2 className="text-2xl md:text-3.5xl font-black uppercase text-stone-900 tracking-tight leading-tight">
+            PT. BERLIAN KONTRAKTOR
+          </h2>
+          
+          <p className="text-xs md:text-sm text-stone-700 leading-relaxed font-medium">
+            PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan. Kami melayani berbagai kebutuhan proyek mulai dari renovasi kantor, pembangunan rumah tinggal, renovasi gedung, hingga pembangunan gudang industri.
+          </p>
 
+          <blockquote className="relative p-6 bg-[#FAF8F5] rounded-xl border-l-4 border-orange-600 text-xs md:text-sm font-medium italic leading-relaxed text-stone-800 shadow-sm">
+            “Dengan pengalaman menangani berbagai proyek di wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi (Jabodetabek), kami berkomitmen untuk memberikan hasil kerja berkualitas tinggi, tepat waktu, dan sesuai anggaran.”
+          </blockquote>
+
+          <div className="space-y-4 pt-4 border-t border-stone-100">
+            <h4 className="text-xs md:text-sm font-black uppercase tracking-wider text-stone-900 flex items-center gap-2">
+              <span>🔧 Layanan Kami</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-stone-700 font-medium">
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+                <span className="text-orange-600 font-black text-base leading-none">●</span>
+                <div>
+                  <strong className="text-stone-900 block mb-0.5">Konstruksi & Pembangunan</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Pembangunan rumah tinggal, gedung komersial, gudang industri, dan fasilitas umum dari nol hingga selesai.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+                <span className="text-orange-600 font-black text-base leading-none">●</span>
+                <div>
+                  <strong className="text-stone-900 block mb-0.5">Renovasi & Remodeling</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Renovasi kantor, villa, gedung, dan hunian dengan hasil modern dan fungsional.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+                <span className="text-orange-600 font-black text-base leading-none">●</span>
+                <div>
+                  <strong className="text-stone-900 block mb-0.5">Interior & Plafon</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Pemasangan plafon gypsum & PVC, partisi gypsum, dan pekerjaan interior lainnya.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+                <span className="text-orange-600 font-black text-base leading-none">●</span>
+                <div>
+                  <strong className="text-stone-900 block mb-0.5">Perbaikan & Maintenance</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Perbaikan plafon bocor/jebol, perawatan bangunan, dan pekerjaan sipil ringan.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 3. VISI & MISI (Staggered Icon Animations appearing sequentially) */}
-      <section className="py-24 bg-zinc-900/40 border-t border-b border-zinc-900" id="visi-misi-section">
+      {/* 3. VISI & MISI SECTION */}
+      <section className="py-20 bg-[#F4F0E8] border-t border-b border-stone-200" id="visi-misi-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-orange-600 font-extrabold tracking-widest text-xs uppercase block mb-2">
+              🎯 VISI & MISI
+            </span>
+            <h2 className="text-2xl md:text-4xl font-black text-stone-900 uppercase tracking-tight">
+              Arah & Komitmen Perusahaan
+            </h2>
+            <div className="w-12 h-1 bg-orange-600 mx-auto mt-3"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             
             {/* Vision Container */}
-            <div className="lg:col-span-5 space-y-6" id="vision-box bg-zinc-950">
-              <span className="text-orange-500 font-bold tracking-widest text-xs uppercase block mb-2">
-                HALUAN BESAR KAMI
-              </span>
-              <h2 className="text-2xl md:text-3.5xl font-black text-white uppercase tracking-tight">
-                VISI BERLIAN KONTRAKTOR
-              </h2>
-              <div className="w-12 h-1 bg-orange-600"></div>
-              
-              <div className="p-8 bg-zinc-900 border border-zinc-850 rounded-2xl flex flex-col gap-5 mt-6 shadow-xl relative overflow-hidden">
-                <div className="absolute right-3 top-3 text-orange-600/10">
-                  <Eye className="w-24 h-24" />
+            <div className="lg:col-span-5 flex flex-col" id="vision-box">
+              <div className="p-8 bg-white border border-stone-200/80 rounded-2xl flex-1 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div className="absolute right-3 top-3 text-orange-600/10 pointer-events-none">
+                  <Target className="w-32 h-32" />
                 </div>
-                <div className="p-3 bg-orange-600/10 rounded-lg text-orange-500 w-fit">
-                  <Eye className="w-6 h-6 animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-3 bg-orange-600/10 rounded-xl text-orange-600">
+                      <Target className="w-6 h-6 animate-pulse" />
+                    </div>
+                    <span className="text-orange-600 font-extrabold text-xs uppercase tracking-widest">
+                      Visi Utama
+                    </span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide leading-snug mb-4">
+                    PT. Berlian
+                  </h3>
+                  <p className="text-stone-700 text-xs md:text-sm leading-relaxed font-medium bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/60">
+                    “Menjadi perusahaan kontraktor terpercaya dan terdepan di Indonesia yang mengutamakan kualitas, inovasi, dan kepuasan pelanggan.”
+                  </p>
                 </div>
-                <h3 className="text-base font-bold text-white uppercase tracking-wide">
-                  Menjadi Pelopor Konstruksi Premium yang Terpercaya
-                </h3>
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
-                  Menjadi mitra konstruksi terpercaya nomor satu di Jawa Barat yang menyelaraskan nilai keindahan desain ruko & hunian modern dengan kepatuhan perhitungan teknik sipil yang kokoh, transparan, serta berkelanjutan.
-                </p>
+
+                <div className="mt-8 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-bold">
+                  <span>Standard Industri SNI</span>
+                  <span className="text-orange-600 font-extrabold">Terpercaya & Terdepan</span>
+                </div>
               </div>
             </div>
 
-            {/* Mission Container with Staggered Transition Trigger */}
-            <div className="lg:col-span-7 space-y-6" id="mission-box">
-              <span className="text-orange-500 font-bold tracking-widest text-xs uppercase block mb-2">
-                LANGKAH STRATEGIS NYATA
-              </span>
-              <h2 className="text-2xl md:text-3.5xl font-black text-white uppercase tracking-tight">
-                MISI KERJA KAMI
-              </h2>
-              <div className="w-12 h-1 bg-orange-600 mb-6"></div>
+            {/* Mission Container */}
+            <div className="lg:col-span-7 flex flex-col" id="mission-box">
+              <div className="p-8 bg-white border border-stone-200/80 rounded-2xl flex-1 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-3 bg-orange-600/10 rounded-xl text-orange-600">
+                      <Eye className="w-6 h-6" />
+                    </div>
+                    <span className="text-orange-600 font-extrabold text-xs uppercase tracking-widest">
+                      Misi Perusahaan (5 Pilar Utama)
+                    </span>
+                  </div>
 
-              {/* Sequential Motion Parent container */}
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 pt-2"
-                id="staggered-missions-list"
-              >
-                {missions.map((mission, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={itemVariants}
-                    className="p-5 bg-zinc-900 border border-zinc-850 rounded-xl flex items-start gap-4 hover:border-orange-600/30 transition-all"
+                  <motion.ul
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="space-y-3"
+                    id="staggered-missions-list"
                   >
-                    <div className="p-2 bg-orange-600/10 rounded-lg text-orange-500 shrink-0 mt-0.5">
-                      {mission.icon}
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="text-xs font-black text-white uppercase tracking-wide">
-                        {mission.title}
-                      </h4>
-                      <p className="text-zinc-400 text-[11px] leading-relaxed">
-                        {mission.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+                    {missions.map((mission, idx) => (
+                      <motion.li
+                        key={idx}
+                        variants={itemVariants}
+                        className="p-3.5 bg-[#FAF8F5] border border-stone-200/70 rounded-xl flex items-start gap-3.5 hover:border-orange-500/50 transition-all shadow-2xs"
+                      >
+                        <span className="w-6 h-6 rounded-full bg-orange-600 text-white font-black text-xs flex items-center justify-center shrink-0 mt-0.5">
+                          {idx + 1}
+                        </span>
+                        <span className="text-xs md:text-sm text-stone-800 font-medium leading-relaxed">
+                          {mission}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              </div>
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* 4. MENGAPA MEMILIH KAMI SECTION */}
+      <section className="py-20 bg-[#FAF8F5]" id="why-choose-us-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-orange-600 font-extrabold tracking-widest text-xs uppercase block mb-2">
+              ⭐ MENGAPA MEMILIH KAMI?
+            </span>
+            <h2 className="text-2xl md:text-4xl font-black text-stone-900 uppercase tracking-tight">
+              Keunggulan Berlian Kontraktor
+            </h2>
+            <div className="w-12 h-1 bg-orange-600 mx-auto mt-3"></div>
+            <p className="text-stone-600 text-xs md:text-sm mt-4">
+              Komitmen kami adalah memberikan nilai tambah terbaik di setiap pengerjaan konstruksi dan renovasi Anda.
+            </p>
+          </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="why-choose-us-grid"
+          >
+            {whyChooseUs.map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-orange-500/40 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-3 bg-orange-600/10 rounded-xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                      {item.icon}
+                    </div>
+                    <span className="text-[10px] font-black text-stone-400 uppercase tracking-widest">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-black text-stone-900 uppercase tracking-wide mb-2 group-hover:text-orange-600 transition-colors">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-stone-600 text-xs leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-[10px] font-extrabold text-orange-600 uppercase tracking-wider">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Jaminan Kualitas Berlian</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
       </section>
 

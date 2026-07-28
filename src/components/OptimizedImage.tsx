@@ -29,13 +29,13 @@ export default function OptimizedImage({
 
   return (
     <div
-      className={`relative overflow-hidden bg-zinc-800 ${wrapperClassName}`}
+      className={`relative w-full overflow-hidden bg-stone-100 ${wrapperClassName}`}
       onClick={onClick}
       id={`opt-img-wrap-${src.substring(src.length - 8).replace(/[^a-zA-Z0-9]/g, "")}`}
     >
       {/* Loading state shimmer overlay */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-200 via-stone-100 to-stone-200 animate-pulse" />
       )}
 
       <motion.img
