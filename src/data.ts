@@ -205,7 +205,7 @@ Sloof beton bertulang berfungsi mengikat fondasi batu kali atau pile cap secara 
 Buat saluran air pembuangan yang tertata baik di sekeliling dinding fondasi luar. Tujuannya adalah mencegah genangan air meresap langsung secara berlebihan ke bawah telapak fondasi, yang dapat mengurangi daya dukung mekanis tanah secara dramatis.
 
 Hubungi tim ahli teknik sipil Berlian Kontraktor di Bogor untuk mendapatkan kalkulasi kekuatan beban struktur yang aman serta presisi bagi rencana hunian Anda.`,
-    image: IMAGES.serviceNewBuild
+    image: IMAGES.hero1
   },
   {
     id: "artikel-2",
@@ -234,7 +234,7 @@ Sering kali dilupakan, biaya untuk instalasi listrik PLN baru, sumur bor/PDAM, g
 Selalu siapkan dana siaga sebesar 5% hingga 10% dari total anggaran proyek. Dana ini sangat berguna jika sewaktu-waktu terjadi lonjakan kenaikan harga bahan bangunan di pasar global atau jika Anda menginginkan sedikit perubahan detail desain di lapangan.
 
 Di Berlian Kontraktor, kami selalu berkomitmen menyodorkan RAB transparan dengan rincian material bermerek yang mengikat, menghindarkan Anda dari stress akibat pembengkakan biaya tak terencana.`,
-    image: IMAGES.serviceRenovation
+    image: IMAGES.hero2
   },
   {
     id: "artikel-3",
@@ -261,7 +261,7 @@ Pastikan talang air beton di atap memiliki kemiringan minimal 1-2% searah corong
 Ruangan yang lembap mempercepat pertumbuhan jamur. Gunakan blower exhaust di sudut-sudut ruangan minim jendela (seperti kamar mandi atau dapur) agar sirkulasi udara luar terjamin.
 
 Perlu penanganan profesional untuk rumah Anda yang telanjur rembes parah? Hubungi tim restorasi/renovasi Berlian Kontraktor Bogor untuk survei thermal scanning lokasi kebocoran secara akurat.`,
-    image: IMAGES.serviceArchitecture
+    image: IMAGES.hero3
   },
   {
     id: "artikel-4",
@@ -286,7 +286,7 @@ Mengatur tinggi ruangan minimal 3.2 meter hingga 4 meter dari permukaan lantai a
 
 4. **Konsep Open Space dengan Taman Dalam Rumah (Inner Courtyard)**
 Menyisipkan taman mini terbuka di tengah bangunan merupakan kunci estetika tropis modern yang menyegarkan mata, menjaga sirkulasi ventilasi tegak lurus, dan mendistribusikan cahaya alami lembut ke seluruh penjuru ruangan.`,
-    image: IMAGES.serviceContractor
+    image: IMAGES.hero2
   },
   {
     id: "artikel-5",
@@ -315,6 +315,6 @@ Seluruh berkas administrasi (KTP, sertifikat tanah bebas sengketa) sertat cetak 
 Salah satu syarat lolos verifikasi PBG adalah lampiran tanda tangan penanggung jawab teknis gambar berlisensi SKA/SKK Sipil/Arsitek.
 
 Di Berlian Kontraktor, kami memberikan kemudahan ekstra dengan menyediakan seluruh dokumen rancangan terverifikasi, perhitungan struktur sipil resmi, serta pendampingan maksimal dalam proses SIMBG agar perizinan Anda terbit tanpa hambatan birokrasi.`,
-    image: IMAGES.serviceContractor
+    image: IMAGES.hero1
   }
 ];
