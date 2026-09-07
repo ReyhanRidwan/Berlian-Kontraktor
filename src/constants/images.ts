@@ -31,7 +31,7 @@ export function optimizeCloudinaryUrl(url: string): string {
 
 export const IMAGES = {
   // Company Logo
-  companyLogo: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1784889320/f0e0f888-b35a-42d1-aff6-13985e5bb7fb.png"),
+  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788770253/image_c13c9b75_w0u8oy.jpg",
 
   // Hero section
   hero1: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),

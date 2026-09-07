@@ -47,13 +47,18 @@ export default function Footer({ setActiveTab }: FooterProps) {
               <div className="h-10 w-10 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
                 <img
                   src={IMAGES.companyLogo}
-                  alt="Berlian Kontraktor Logo"
+                  alt="Berlian Kontraktor & Arsitektur Logo"
                   className="h-full w-full object-contain"
                 />
               </div>
-              <span className="text-lg font-black text-stone-900 tracking-wider">
-                BERLIAN KONTRAKTOR
-              </span>
+              <div className="flex flex-col">
+                <span className="text-base sm:text-lg font-black text-stone-900 tracking-wider uppercase leading-none">
+                  BERLIAN
+                </span>
+                <span className="text-[11px] sm:text-xs font-bold text-orange-600 tracking-tight mt-1 leading-none">
+                  Kontraktor & Arsitektur
+                </span>
+              </div>
             </div>
             <p className="text-stone-600 text-xs leading-relaxed mt-1">
               PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan di wilayah Jabodetabek. Kami melayani berbagai kebutuhan proyek mulai dari renovasi kantor, pembangunan rumah tinggal, renovasi gedung, hingga pembangunan gudang industri.

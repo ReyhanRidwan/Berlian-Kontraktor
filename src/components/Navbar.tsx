@@ -55,25 +55,25 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo Brand Berlian Kontraktor */}
+          {/* Logo Brand Berlian Kontraktor & Arsitektur */}
           <div
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => handleNavClick("home")}
             id="navbar-brand-logo"
           >
-            <div className="h-10 w-10 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
+            <div className="h-10 w-10 sm:h-11 sm:w-11 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
               <img
                 src={IMAGES.companyLogo}
-                alt="Berlian Kontraktor Logo"
+                alt="Berlian Kontraktor & Arsitektur Logo"
                 className="h-full w-full object-contain"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black text-stone-900 tracking-wider leading-none">
+              <span className="text-base sm:text-lg md:text-xl font-black text-stone-900 tracking-wider uppercase leading-none">
                 BERLIAN
               </span>
-              <span className="text-[10px] font-extrabold text-orange-600 tracking-widest uppercase mt-0.5">
-                KONTRAKTOR
+              <span className="text-[10.5px] sm:text-xs font-bold text-orange-600 tracking-tight mt-1 leading-none">
+                Kontraktor & Arsitektur
               </span>
             </div>
           </div>
