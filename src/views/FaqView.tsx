@@ -6,6 +6,7 @@
 import { useState } from "react";
 import { HelpCircle, ChevronDown, CheckSquare, Sparkles } from "lucide-react";
 import { FAQS_DATA } from "../data";
+import { CONTACT_INFO } from "../constants/contact";
 
 export default function FaqView() {
   const [activeCategory, setActiveCategory] = useState<"Semua" | "Layanan" | "Biaya" | "Waktu">("Semua");
@@ -135,13 +136,13 @@ export default function FaqView() {
           </p>
           <div className="mt-6">
             <a
-              href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20ingin%20bertanya%20mengenai%20kelayakan%20tanah%20dan%20konstruksi"
+              href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white text-xs font-black uppercase tracking-wider px-6 py-3 rounded-lg shadow-md transition-all"
               id="faq-whatsapp-redirection"
             >
-              Tanya Kontraktor via WA
+              <span>Tanya Kontraktor via WA ({CONTACT_INFO.consultation.phone})</span>
             </a>
           </div>
         </div>

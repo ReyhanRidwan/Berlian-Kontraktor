@@ -4,18 +4,22 @@
  */
 
 import { motion } from "motion/react";
-import { Hammer, Wrench, Paintbrush, ShieldCheck, CheckCircle2, Handshake, MapPin, MessageSquare, Layout, Calculator, FileSignature, HardHat, Award } from "lucide-react";
-import { SERVICES_DATA } from "../data";
+import { Hammer, Wrench, Paintbrush, ShieldCheck, CheckCircle2, Handshake, MapPin, MessageSquare, Layout, Calculator, FileSignature, HardHat, Award, Building2, DraftingCompass } from "lucide-react";
+import { SERVICES_DATA, WORKFLOW_STEPS } from "../data";
 import OptimizedImage from "../components/OptimizedImage";
 
 export default function ServicesView() {
   // Returns appropriate lucide React icon based on id
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
-      case "Hammer":
-        return <Hammer className="w-8 h-8 text-orange-500 animate-pulse" />;
+      case "Building2":
+        return <Building2 className="w-8 h-8 text-orange-500" />;
+      case "DraftingCompass":
+        return <DraftingCompass className="w-8 h-8 text-orange-500" />;
       case "Wrench":
         return <Wrench className="w-8 h-8 text-orange-500" />;
+      case "Hammer":
+        return <Hammer className="w-8 h-8 text-orange-500 animate-pulse" />;
       case "Paintbrush":
         return <Paintbrush className="w-8 h-8 text-orange-500" />;
       default:
@@ -23,64 +27,39 @@ export default function ServicesView() {
     }
   };
 
-  const workflowSteps = [
-    {
-      step: 1,
-      title: "Survei Lokasi",
-      desc: "Tim kami mengunjungi lokasi proyek untuk pengukuran, pengecekan kondisi lahan, dan dokumentasi awal.",
-      badge: "Gratis",
-      badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      icon: <MapPin className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 2,
-      title: "Diskusi Kebutuhan Ruang",
-      desc: "Mendiskusikan kebutuhan ruang, fungsi bangunan, preferensi desain, dan anggaran bersama klien.",
-      badge: "Konsultasi",
-      badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
-      icon: <MessageSquare className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 3,
-      title: "Pembuatan Desain",
-      desc: "Menyusun desain arsitektur dan interior berdasarkan hasil diskusi. Revisi dilakukan hingga klien puas.",
-      badge: "Revisi Sampai Puas",
-      badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
-      icon: <Layout className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 4,
-      title: "Pembuatan RAB",
-      desc: "Menyusun Rencana Anggaran Biaya yang detail, transparan, dan kompetitif. Tanpa biaya tersembunyi.",
-      badge: "Tanpa Biaya Tersembunyi",
-      badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
-      icon: <Calculator className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 5,
-      title: "Tanda Tangan Kontrak",
-      desc: "Penandatanganan kontrak kerja yang memuat ruang lingkup, jadwal, nilai kontrak, serta hak dan kewajiban kedua belah pihak.",
-      badge: "Legal & Binding",
-      badgeColor: "bg-stone-100 text-stone-700 border-stone-200",
-      icon: <FileSignature className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 6,
-      title: "Pelaksanaan Proyek",
-      desc: "Proyek dikerjakan sesuai timeline. Klien menerima laporan progres mingguan berupa foto, video, dan keterangan perkembangan.",
-      badge: "Laporan Mingguan",
-      badgeColor: "bg-orange-50 text-orange-700 border-orange-200",
-      icon: <HardHat className="w-5 h-5 text-orange-600" />
-    },
-    {
-      step: 7,
-      title: "Serah Terima",
-      desc: "Setelah pekerjaan selesai dan lolos inspeksi bersama, dilakukan serah terima resmi lengkap dengan dokumentasi akhir proyek.",
-      badge: "Dokumentasi Resmi",
-      badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      icon: <Award className="w-5 h-5 text-orange-600" />
+  const getWorkflowIcon = (iconName: string) => {
+    switch (iconName) {
+      case "MapPin":
+        return <MapPin className="w-5 h-5 text-orange-600" />;
+      case "DraftingCompass":
+        return <DraftingCompass className="w-5 h-5 text-orange-600" />;
+      case "FileSignature":
+        return <FileSignature className="w-5 h-5 text-orange-600" />;
+      case "HardHat":
+        return <HardHat className="w-5 h-5 text-orange-600" />;
+      case "Award":
+        return <Award className="w-5 h-5 text-orange-600" />;
+      default:
+        return <CheckCircle2 className="w-5 h-5 text-orange-600" />;
     }
-  ];
+  };
+
+  const getBadgeColor = (step: number) => {
+    switch (step) {
+      case 1:
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
+      case 2:
+        return "bg-blue-50 text-blue-700 border-blue-200";
+      case 3:
+        return "bg-purple-50 text-purple-700 border-purple-200";
+      case 4:
+        return "bg-amber-50 text-amber-700 border-amber-200";
+      case 5:
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
+      default:
+        return "bg-stone-100 text-stone-700 border-stone-200";
+    }
+  };
 
   return (
     <div className="font-sans text-stone-900 bg-[#FAF8F5]" id="services-view-container">
@@ -104,9 +83,9 @@ export default function ServicesView() {
         </div>
       </header>
 
-      {/* 2. SERVICES LIST: 2-Column Grid with Large Shadow Hover Effects */}
+      {/* 2. SERVICES LIST: 3-Column Grid */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="services-elements-grid">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 leading-relaxed">
           {SERVICES_DATA.map((service, idx) => (
             <motion.div
               key={service.id}
@@ -165,27 +144,27 @@ export default function ServicesView() {
         </div>
       </section>
 
-      {/* 3. TAHAPAN KERJASAMA SECTION */}
+      {/* 3. TAHAPAN KERJA SECTION */}
       <section className="py-20 bg-white border-t border-stone-200" id="tahapan-kerjasama-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-600/10 rounded-full text-orange-600 mb-3 border border-orange-500/20">
               <Handshake className="w-4 h-4" />
-              <span className="text-xs font-black tracking-widest uppercase">🤝 TAHAPAN KERJASAMA</span>
+              <span className="text-xs font-black tracking-widest uppercase">🤝 TAHAPAN KERJA</span>
             </div>
             <h2 className="text-2xl md:text-3.5xl font-black text-stone-900 uppercase tracking-tight" id="tahapan-heading">
-              Alur Kerja Sistematis & Transparan
+              Tahapan Kerja Berlian Kontraktor
             </h2>
             <div className="w-16 h-1 bg-orange-600 mx-auto mt-3"></div>
             <p className="text-stone-600 text-xs md:text-sm mt-3 font-medium">
-              Kami menerapkan alur kerja yang sistematis dan transparan agar setiap proyek berjalan lancar dari awal hingga serah terima.
+              Alur kerja sistematis, transparan, dan terukur mulai dari survei awal hingga serah terima hunian impian Anda.
             </p>
           </div>
 
-          {/* Stepper Grid (7 Steps) */}
+          {/* Stepper Grid (5 Steps) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch" id="tahapan-steps-grid">
-            {workflowSteps.map((item, idx) => (
+            {WORKFLOW_STEPS.map((item, idx) => (
               <motion.div
                 key={item.step}
                 initial={{ opacity: 0, y: 20 }}
@@ -193,7 +172,7 @@ export default function ServicesView() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between relative bg-[#FAF8F5] border-stone-200 hover:border-orange-500/50 hover:shadow-md group ${
-                  item.step === 7 ? "md:col-span-2 lg:col-span-3 bg-gradient-to-r from-orange-50/60 via-amber-50/40 to-white" : ""
+                  item.step === 5 ? "md:col-span-2 lg:col-span-2 bg-gradient-to-r from-orange-50/70 via-amber-50/40 to-white" : ""
                 }`}
                 id={`tahapan-card-step-${item.step}`}
               >
@@ -201,20 +180,20 @@ export default function ServicesView() {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2.5">
                       <span className="w-8 h-8 rounded-xl bg-orange-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm">
-                        {item.step}
+                        {item.stepNumber}
                       </span>
                       <div className="p-2 bg-white rounded-lg border border-stone-200 shrink-0">
-                        {item.icon}
+                        {getWorkflowIcon(item.iconName)}
                       </div>
                     </div>
 
-                    <span className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border ${item.badgeColor}`}>
+                    <span className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border ${getBadgeColor(item.step)}`}>
                       {item.badge}
                     </span>
                   </div>
 
                   <h3 className="text-base md:text-lg font-black text-stone-900 uppercase tracking-wide mb-2 group-hover:text-orange-600 transition-colors">
-                    Tahap {item.step}: {item.title}
+                    Langkah {item.stepNumber}: {item.title}
                   </h3>
 
                   <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-normal">
@@ -224,7 +203,7 @@ export default function ServicesView() {
 
                 <div className="mt-5 pt-3 border-t border-stone-200/60 flex items-center justify-between text-[10.5px] font-bold text-stone-500">
                   <span>Proses Transparan Berlian</span>
-                  <span className="text-orange-600 font-extrabold">Langkah 0{item.step} / 07</span>
+                  <span className="text-orange-600 font-extrabold">Langkah {item.stepNumber} / 05</span>
                 </div>
               </motion.div>
             ))}
@@ -240,15 +219,15 @@ export default function ServicesView() {
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
                   <tr className="bg-white border-b border-stone-200 text-stone-900">
-                    <th className="py-3 px-4 font-black uppercase text-[11px] w-16">Tahap</th>
+                    <th className="py-3 px-4 font-black uppercase text-[11px] w-24">Tahap</th>
                     <th className="py-3 px-4 font-black uppercase text-[11px] w-1/4">Kegiatan</th>
                     <th className="py-3 px-4 font-black uppercase text-[11px]">Keterangan</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-stone-200/80 text-stone-700">
-                  {workflowSteps.map((ws) => (
+                  {WORKFLOW_STEPS.map((ws) => (
                     <tr key={ws.step} className="hover:bg-white/60 transition-colors">
-                      <td className="py-3.5 px-4 font-black text-orange-600 text-center">{ws.step}</td>
+                      <td className="py-3.5 px-4 font-black text-orange-600">Langkah {ws.stepNumber}</td>
                       <td className="py-3.5 px-4 font-extrabold text-stone-900">{ws.title}</td>
                       <td className="py-3.5 px-4 font-medium text-stone-600 leading-relaxed">{ws.desc}</td>
                     </tr>
@@ -266,10 +245,10 @@ export default function ServicesView() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-xl md:text-2xl font-black uppercase text-stone-900 tracking-wide">
-              STANDARISASI FISIK & LOGISTIK
+              STANDARISASI PEKERJAAN
             </h2>
             <p className="text-stone-600 text-xs mt-2 font-medium">
-              Setiap proses pengawasan di lapangan tunduk pada kriteria mutu internasional.
+              Setiap proses pengawasan di lapangan tunduk pada kriteria mutu dan kualitas yang sudah disepakati.
             </p>
           </div>
 

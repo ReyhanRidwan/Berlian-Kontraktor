@@ -5,6 +5,7 @@
 
 import { motion } from "motion/react";
 import { Eye, Award, Clock, DollarSign, FileText, ShieldCheck, Users, Target, CheckCircle2, Building2 } from "lucide-react";
+import LegalitySection from "../components/LegalitySection";
 
 export default function AboutView() {
   const containerVariants = {
@@ -55,11 +56,11 @@ export default function AboutView() {
   ];
 
   const missions = [
-    "Memberikan layanan konstruksi dan renovasi dengan standar kualitas tinggi.",
-    "Menjalin hubungan kerja yang profesional dan saling menguntungkan dengan klien.",
-    "Mengembangkan kompetensi tim secara berkelanjutan.",
-    "Menyelesaikan setiap proyek tepat waktu dan sesuai anggaran.",
-    "Mengutamakan keselamatan kerja dan kelestarian lingkungan."
+    "Menghadirkan solusi pembangunan berkelanjutan yang berkualitas tinggi dan berdaya tahan.",
+    "Mengutamakan inovasi berkelanjutan dan pemanfaatan teknologi modern di setiap proyek.",
+    "Membangun hubungan yang transparan, profesional, dan terpercaya dengan seluruh pelanggan.",
+    "Menjaga komitmen terhadap keberlanjutan lingkungan dan standar keselamatan kerja.",
+    "Mendukung pengembangan infrastruktur nasional melalui profesionalisme tim terpercaya."
   ];
 
   return (
@@ -76,7 +77,7 @@ export default function AboutView() {
             KOKOH, PRESISI & TERPERCAYA
           </h1>
           <p className="mt-4 text-stone-600 text-xs md:text-sm max-w-3xl mx-auto leading-relaxed font-normal">
-            PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan. Kami melayani wilayah Jabodetabek dengan komitmen hasil kerja berkualitas tinggi, tepat waktu, dan sesuai anggaran.
+            Sebagai perusahaan yang berfokus pada inovasi dan keunggulan di bidang konstruksi, Berlian Kontraktor hadir untuk mewujudkan visi Anda dalam membangun masa depan.
           </p>
         </div>
       </header>
@@ -94,51 +95,48 @@ export default function AboutView() {
           </div>
           
           <h2 className="text-2xl md:text-3.5xl font-black uppercase text-stone-900 tracking-tight leading-tight">
-            PT. BERLIAN KONTRAKTOR
+            APA ITU BERLIAN KONTRAKTOR?
           </h2>
           
-          <p className="text-xs md:text-sm text-stone-700 leading-relaxed font-medium">
-            PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan. Kami melayani berbagai kebutuhan proyek mulai dari renovasi kantor, pembangunan rumah tinggal, renovasi gedung, hingga pembangunan gudang industri.
-          </p>
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-600/10 rounded-md text-orange-700 font-black text-xs uppercase tracking-wider">
+              <span>● Deskripsi Perusahaan</span>
+            </div>
+            <p className="text-xs md:text-sm text-stone-700 leading-relaxed font-medium">
+              Sebagai perusahaan yang berfokus pada inovasi dan keunggulan di bidang konstruksi, Berlian Kontraktor hadir untuk mewujudkan visi Anda dalam membangun masa depan. Dengan pengalaman dan keahlian yang terpercaya, kami menyediakan solusi konstruksi yang mengutamakan kualitas, ketepatan waktu, dan kepuasan pelanggan. Didukung oleh tim profesional dan teknologi terkini, kami siap menjadi mitra Anda dalam menciptakan bangunan yang kokoh, estetis, dan bernilai tinggi.
+            </p>
+          </div>
 
           <blockquote className="relative p-6 bg-[#FAF8F5] rounded-xl border-l-4 border-orange-600 text-xs md:text-sm font-medium italic leading-relaxed text-stone-800 shadow-sm">
-            “Dengan pengalaman menangani berbagai proyek di wilayah Jakarta, Bogor, Depok, Tangerang, dan Bekasi (Jabodetabek), kami berkomitmen untuk memberikan hasil kerja berkualitas tinggi, tepat waktu, dan sesuai anggaran.”
+            “Didukung oleh tim profesional dan teknologi terkini, kami siap menjadi mitra Anda dalam menciptakan bangunan yang kokoh, estetis, dan bernilai tinggi.”
           </blockquote>
 
           <div className="space-y-4 pt-4 border-t border-stone-100">
             <h4 className="text-xs md:text-sm font-black uppercase tracking-wider text-stone-900 flex items-center gap-2">
-              <span>🔧 Layanan Kami</span>
+              <span>🔧 Layanan Konstruksi Berlian Kontraktor</span>
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-stone-700 font-medium">
-              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm text-stone-700 font-medium">
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/80">
                 <span className="text-orange-600 font-black text-base leading-none">●</span>
                 <div>
-                  <strong className="text-stone-900 block mb-0.5">Konstruksi & Pembangunan</strong>
-                  <span className="text-stone-600 text-xs leading-relaxed">Pembangunan rumah tinggal, gedung komersial, gudang industri, dan fasilitas umum dari nol hingga selesai.</span>
+                  <strong className="text-stone-900 block mb-1 text-sm">Construction Building</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Berlian Kontraktor menawarkan layanan pembangunan rumah yang profesional, berkualitas, efisien, dan sesuai kebutuhan pelanggan.</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/80">
                 <span className="text-orange-600 font-black text-base leading-none">●</span>
                 <div>
-                  <strong className="text-stone-900 block mb-0.5">Renovasi & Remodeling</strong>
-                  <span className="text-stone-600 text-xs leading-relaxed">Renovasi kantor, villa, gedung, dan hunian dengan hasil modern dan fungsional.</span>
+                  <strong className="text-stone-900 block mb-1 text-sm">Design Building</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Berlian Kontraktor menyediakan layanan desain bangunan kreatif dan fungsional, bekerja sama dengan arsitek profesional untuk menghasilkan desain yang estetis, efisien, dan sesuai anggaran.</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
+              <div className="flex items-start gap-3 bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/80">
                 <span className="text-orange-600 font-black text-base leading-none">●</span>
                 <div>
-                  <strong className="text-stone-900 block mb-0.5">Interior & Plafon</strong>
-                  <span className="text-stone-600 text-xs leading-relaxed">Pemasangan plafon gypsum & PVC, partisi gypsum, dan pekerjaan interior lainnya.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 bg-[#FAF8F5] p-4 rounded-xl border border-stone-200/80">
-                <span className="text-orange-600 font-black text-base leading-none">●</span>
-                <div>
-                  <strong className="text-stone-900 block mb-0.5">Perbaikan & Maintenance</strong>
-                  <span className="text-stone-600 text-xs leading-relaxed">Perbaikan plafon bocor/jebol, perawatan bangunan, dan pekerjaan sipil ringan.</span>
+                  <strong className="text-stone-900 block mb-1 text-sm">Home Maintenance</strong>
+                  <span className="text-stone-600 text-xs leading-relaxed">Berlian Kontraktor menyediakan layanan perawatan rumah, seperti perbaikan kebocoran, pengecatan, dan perbaikan lainnya, dengan hasil yang cepat, rapi, dan berkualitas untuk menjaga hunian tetap nyaman dan tahan lama</span>
                 </div>
               </div>
             </div>
@@ -150,14 +148,24 @@ export default function AboutView() {
       <section className="py-20 bg-[#F4F0E8] border-t border-b border-stone-200" id="visi-misi-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-orange-600 font-extrabold tracking-widest text-xs uppercase block mb-2">
               🎯 VISI & MISI
             </span>
             <h2 className="text-2xl md:text-4xl font-black text-stone-900 uppercase tracking-tight">
-              Arah & Komitmen Perusahaan
+              VISI & MISI BERLIAN KONTRAKTOR
             </h2>
             <div className="w-12 h-1 bg-orange-600 mx-auto mt-3"></div>
+          </div>
+
+          {/* Official Visi Misi Full Statement Card */}
+          <div className="max-w-4xl mx-auto mb-10 bg-white p-6 md:p-8 rounded-2xl border border-stone-200 shadow-sm" id="visi-misi-statement-box">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-600/10 rounded-md text-orange-700 font-black text-xs uppercase tracking-wider mb-3">
+              <span>● Teks Visi Misi</span>
+            </div>
+            <p className="text-xs md:text-sm text-stone-800 font-medium leading-relaxed bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/70">
+              Berlian Kontraktor berkomitmen menjadi perusahaan konstruksi terkemuka di Indonesia dengan menghadirkan solusi pembangunan berkelanjutan yang berkualitas tinggi. Kami mengutamakan inovasi, hubungan yang transparan dengan pelanggan, keberlanjutan lingkungan, serta mendukung infrastruktur nasional melalui profesionalisme dan teknologi modern.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -174,20 +182,20 @@ export default function AboutView() {
                       <Target className="w-6 h-6 animate-pulse" />
                     </div>
                     <span className="text-orange-600 font-extrabold text-xs uppercase tracking-widest">
-                      Visi Utama
+                      Visi Perusahaan
                     </span>
                   </div>
                   <h3 className="text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide leading-snug mb-4">
-                    PT. Berlian
+                    Berlian Kontraktor
                   </h3>
                   <p className="text-stone-700 text-xs md:text-sm leading-relaxed font-medium bg-[#FAF8F5] p-5 rounded-xl border border-stone-200/60">
-                    “Menjadi perusahaan kontraktor terpercaya dan terdepan di Indonesia yang mengutamakan kualitas, inovasi, dan kepuasan pelanggan.”
+                    “Menjadi perusahaan konstruksi terkemuka di Indonesia dengan menghadirkan solusi pembangunan berkelanjutan yang berkualitas tinggi.”
                   </p>
                 </div>
 
                 <div className="mt-8 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-bold">
-                  <span>Standard Industri SNI</span>
-                  <span className="text-orange-600 font-extrabold">Terpercaya & Terdepan</span>
+                  <span>Inovasi & Teknologi Modern</span>
+                  <span className="text-orange-600 font-extrabold">Solusi Berkelanjutan</span>
                 </div>
               </div>
             </div>
@@ -201,7 +209,7 @@ export default function AboutView() {
                       <Eye className="w-6 h-6" />
                     </div>
                     <span className="text-orange-600 font-extrabold text-xs uppercase tracking-widest">
-                      Misi Perusahaan (5 Pilar Utama)
+                      Pilar Komitmen & Misi
                     </span>
                   </div>
 
@@ -236,7 +244,10 @@ export default function AboutView() {
         </div>
       </section>
 
-      {/* 4. MENGAPA MEMILIH KAMI SECTION */}
+      {/* 4. LEGALITAS & KOMITMEN PERUSAHAAN (BENTO GRID) */}
+      <LegalitySection />
+
+      {/* 5. MENGAPA MEMILIH KAMI SECTION */}
       <section className="py-20 bg-[#FAF8F5]" id="why-choose-us-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           

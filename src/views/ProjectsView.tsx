@@ -7,6 +7,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle2, MapPin, Wrench, ImageIcon, Maximize2, X, ArrowRight, FolderCheck } from "lucide-react";
 import OptimizedImage from "../components/OptimizedImage";
+import { CONTACT_INFO } from "../constants/contact";
 
 interface ProjectsViewProps {
   setActiveTab: (tab: string) => void;
@@ -22,7 +23,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "rotary-bintaro",
       title: "Proyek Renovasi Rotary, Bintaro",
       location: "Bintaro, Tangerang Selatan",
-      category: "Renovasi Total",
+      category: "Renovasi",
       shapeLabel: "Persegi (1:1)",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785150130/image_riu4qi.webp",
@@ -32,7 +33,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "alun-indah-cakung",
       title: "Proyek Renovasi Alun Indah - Cakung",
       location: "Cakung, Jakarta Timur",
-      category: "Renovasi Bangunan",
+      category: "Renovasi",
       shapeLabel: "Persegi Panjang",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
@@ -42,7 +43,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "renovasi-gudang-halarag",
       title: "Renovasi Gudang PT. Halarag - Cileungsi",
       location: "Cileungsi, Bogor",
-      category: "Renovasi Industri",
+      category: "Renovasi",
       shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151950/Renovasi_Gudang_Pt._Halarag_-_Cileungsi_snxukh.webp",
@@ -52,7 +53,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "pembangunan-rumah-anton-bsd",
       title: "Proses Pembangunan Rumah Tinggal 3 Lantai Bpk Anton - BSD",
       location: "BSD, Tangerang Selatan",
-      category: "Konstruksi Rumah 3 Lantai",
+      category: "Konstruksi",
       shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152059/Proses_pembangunan_rumat_tinggal_3_lantai_Bpk_Anton_-_BSD_kooqlj.webp",
@@ -62,7 +63,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "gudang-pupuk-albayu-sukabumi",
       title: "Pembangunan Gudang Pupuk Albayu Farm - Sukabumi",
       location: "Sukabumi, Jawa Barat",
-      category: "Konstruksi Gudang",
+      category: "Konstruksi",
       shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152145/Pembangunan_Gudang_Pupuk_Albayu_Farm_-_Sukabumi_zdjcvm.webp",
@@ -72,7 +73,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "renovasi-villa-teguh-puncak",
       title: "Renovasi Villa Bpk Teguh, Puncak - Bogor",
       location: "Puncak, Bogor",
-      category: "Renovasi Villa",
+      category: "Renovasi",
       shapeLabel: "Vertikal",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp",
@@ -82,7 +83,7 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       id: "renovasi-wisma-ems-cisarua",
       title: "Renovasi Wisma EMS, Cisarua - Bogor",
       location: "Cisarua, Bogor",
-      category: "Renovasi Wisma",
+      category: "Renovasi",
       shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp",
@@ -94,73 +95,66 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
   const maintenanceProjects = [
     {
       id: "maint-1",
-      title: "Pemeliharaan & Pengecekan Atap Bangunan 01",
+      title: "Maintenance 1",
       location: "Area Jabodetabek",
       category: "Maintenance Atap",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152789/maintenance_1_uihyod.webp",
-      description: "Inspeksi kerapatan pelapis kedap air (waterproofing) dan perbaikan struktur atap secara berkala."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152789/maintenance_1_uihyod.webp"
     },
     {
       id: "maint-2",
-      title: "Perawatan & Inspeksi Struktur Bangunan 02",
+      title: "Maintenance 2",
       location: "Area Jabodetabek",
       category: "Maintenance Struktur",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152874/image_4_sqfeqo.webp",
-      description: "Pengecekan kondisi fisik retak rambut, pondasi, serta perkuatan komponen struktural utama."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152874/image_4_sqfeqo.webp"
     },
     {
       id: "maint-3",
-      title: "Pemeliharaan Sistem Dinding & Cat 03",
+      title: "Maintenance 3",
       location: "Area Jabodetabek",
       category: "Maintenance Finishing",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153019/image_6_g83xxl.webp",
-      description: "Perawatan permukaan dinding eksterior dan pengecatan ulang pelindung cuaca."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153019/image_6_g83xxl.webp"
     },
     {
       id: "maint-4",
-      title: "Inspeksi Sanitasi & Drainase Proyek 04",
+      title: "Maintenance 4",
       location: "Area Jabodetabek",
       category: "Maintenance Sanitasi",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153078/image_7_eswjut.webp",
-      description: "Pemeriksaan saluran pembuangan air hujan dan pembersihan instalasi perpipaan pasca serah terima."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153078/image_7_eswjut.webp"
     },
     {
       id: "maint-5",
-      title: "Perawatan & Perbaikan Fasilitas Gedung 05",
+      title: "Maintenance 5",
       location: "Area Jabodetabek",
       category: "Maintenance Bangunan",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153164/image_9_mvh3t7.webp",
-      description: "Servis rutin ornamen eksterior, fasad, serta perapihan interior pendukung."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153164/image_9_mvh3t7.webp"
     },
     {
       id: "maint-6",
-      title: "Pemeriksaan Kelistrikan & Utilitas 06",
+      title: "Maintenance 6",
       location: "Area Jabodetabek",
       category: "Maintenance Utilitas",
       shapeLabel: "Standar",
       isWide: false,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153269/image_10_d9i1tv.webp",
-      description: "Pengujian instalasi kelistrikan, panel utama, serta jaringan pencahayaan secara berkala."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153269/image_10_d9i1tv.webp"
     },
     {
       id: "maint-7",
-      title: "Dokumentasi Pemeliharaan Fasad & Area Luar",
+      title: "Maintenance 7",
       location: "Area Jabodetabek",
       category: "Maintenance Fasad",
       shapeLabel: "Persegi Panjang",
       isWide: true,
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153132/image_8_zdory3.webp",
-      description: "Survei menyeluruh dan perawatan lanskap luar serta fasad melintang gedung komersial."
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785153132/image_8_zdory3.webp"
     }
   ];
 
@@ -354,42 +348,19 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
                 {/* 2. Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-black/20 group-hover:via-stone-950/70 transition-colors duration-500" />
 
-                {/* 3. Top Badges */}
-                <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-                  <span className="backdrop-blur-md bg-amber-500/90 text-stone-950 font-black text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-amber-300 shadow-md">
-                    {maint.category}
-                  </span>
-
+                {/* 3. Top Action (Zoom Hint) */}
+                <div className="absolute top-4 right-4 z-20 pointer-events-none">
                   <span className="backdrop-blur-md bg-black/50 text-stone-200 font-bold text-[10px] uppercase tracking-wider px-2.5 py-1.5 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-md group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-500 transition-all">
                     <Maximize2 className="w-3.5 h-3.5" />
                     <span className="hidden sm:inline">Perbesar</span>
                   </span>
                 </div>
 
-                {/* 4. Bottom Content */}
-                <div className="relative z-10 p-6 md:p-7 space-y-3.5 text-white">
-                  <div className="flex items-center gap-1.5 text-amber-400 text-xs font-bold tracking-wide">
-                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>{maint.location}</span>
-                  </div>
-
+                {/* 4. Bottom Content - Title Only */}
+                <div className="relative z-10 p-6 md:p-7 text-white">
                   <h3 className="text-lg md:text-xl font-black uppercase text-white tracking-wide group-hover:text-amber-400 transition-colors duration-300 leading-snug">
                     {maint.title}
                   </h3>
-
-                  <p className="text-stone-300 text-xs leading-relaxed font-normal line-clamp-2">
-                    {maint.description}
-                  </p>
-
-                  <div className="pt-3 border-t border-white/15 flex items-center justify-between text-xs mt-1">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-stone-300 bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/15">
-                      Format: {maint.shapeLabel}
-                    </span>
-                    <span className="text-amber-400 group-hover:text-white font-black text-xs uppercase tracking-wider flex items-center gap-1 transition-colors">
-                      <span>Lihat Detail</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
                 </div>
               </motion.div>
             ))}
@@ -468,13 +439,13 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
-              href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20renovasi"
+              href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-orange-600 hover:bg-orange-700 text-white font-black text-xs py-3.5 px-8 rounded-full uppercase tracking-wider transition-all shadow-md"
               id="cta-portfolio-wa-btn"
             >
-              Konsultasi via WhatsApp
+              <span>Konsultasi via WhatsApp ({CONTACT_INFO.consultation.phone})</span>
             </a>
             <button
               onClick={() => {

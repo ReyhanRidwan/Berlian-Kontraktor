@@ -5,16 +5,17 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { MapPin, Phone, ExternalLink, Compass, Navigation } from "lucide-react";
+import { MapPin, Phone, ExternalLink, Compass, Navigation, Headphones } from "lucide-react";
+import { CONTACT_INFO } from "../constants/contact";
 
 export default function InteractiveMap() {
   const [showDirections, setShowDirections] = useState(false);
   
-  const address = "Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur";
-  const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur")}`;
+  const address = CONTACT_INFO.office.address;
+  const mapSearchUrl = CONTACT_INFO.office.gmapsSearchUrl;
   
   // Embedded Google Map Iframe using query coordinates for Jatinegara, Jakarta Timur
-  const embedMapUrl = `https://maps.google.com/maps?q=${encodeURIComponent("Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur")}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+  const embedMapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   const serviceAreas = [
     {
@@ -22,20 +23,28 @@ export default function InteractiveMap() {
       cakupan: "Jakarta Pusat, Utara, Selatan, Barat, Timur"
     },
     {
-      wilayah: "Tangerang",
-      cakupan: "Kota Tangerang, Tangerang Selatan, Kabupaten Tangerang"
+      wilayah: "Bogor",
+      cakupan: "Kota Bogor, Kabupaten Bogor (Cisarua, Puncak, dll)"
     },
     {
       wilayah: "Depok",
       cakupan: "Seluruh wilayah Kota Depok"
     },
     {
-      wilayah: "Bogor",
-      cakupan: "Kota Bogor, Kabupaten Bogor (termasuk Cisarua, Cigombong)"
+      wilayah: "Tangerang",
+      cakupan: "Kota Tangerang, Tangerang Selatan, Kabupaten Tangerang"
     },
     {
       wilayah: "Bekasi",
       cakupan: "Kota Bekasi, Kabupaten Bekasi"
+    },
+    {
+      wilayah: "Jawa & Sekitarnya",
+      cakupan: "Jawa Barat, Jawa Tengah, Jawa Timur & sekitarnya"
+    },
+    {
+      wilayah: "Lampung & Sekitarnya",
+      cakupan: "Bandar Lampung & wilayah provinsi Lampung sekitarnya"
     }
   ];
 
@@ -50,11 +59,11 @@ export default function InteractiveMap() {
             <span className="text-xs font-black tracking-widest uppercase">📍 AREA LAYANAN</span>
           </div>
           <h2 className="text-2xl md:text-3.5xl font-black text-stone-900 tracking-tight uppercase" id="area-layanan-heading">
-            Cakupan Jangkauan Proyek
+            Area Layanan
           </h2>
           <div className="w-16 h-1 bg-orange-600 mx-auto mt-3"></div>
-          <p className="text-stone-600 text-xs md:text-sm mt-3 font-medium">
-            Kami melayani proyek di seluruh wilayah <strong className="text-stone-900 font-extrabold">Jabodetabek</strong>:
+          <p className="text-stone-700 text-xs md:text-sm mt-3 font-semibold" id="area-layanan-subtext">
+            Jangkauan kerja kami meliputi area Jabodetabek, Jawa, Lampung & sekitarnya
           </p>
         </div>
 
@@ -141,16 +150,28 @@ export default function InteractiveMap() {
               </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-xs text-stone-700">
-                <Phone className="w-4 h-4 text-orange-600" />
-                <a href="https://wa.me/6285715910161" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 font-extrabold text-stone-900">
-                  +62 857-1591-0161 (WhatsApp)
-                </a>
+            <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-2.5">
+              <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                <Phone className="w-4 h-4 text-orange-600 shrink-0" />
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-[10px] uppercase font-bold text-stone-500">Konsultasi:</span>
+                  <a href={CONTACT_INFO.consultation.waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 font-extrabold text-stone-900">
+                    {CONTACT_INFO.consultation.phone}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-xs text-stone-700">
-                <Compass className="w-4 h-4 text-orange-600" />
-                <span className="font-medium">Kec. Jatinegara, Jakarta Timur</span>
+              <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                <Headphones className="w-4 h-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-[10px] uppercase font-bold text-stone-500">CS:</span>
+                  <a href={CONTACT_INFO.customerService.waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 font-extrabold text-stone-900">
+                    {CONTACT_INFO.customerService.phone}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                <Compass className="w-4 h-4 text-orange-600 shrink-0" />
+                <span className="font-medium">{CONTACT_INFO.office.area}</span>
               </div>
             </div>
 

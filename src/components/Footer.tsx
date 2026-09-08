@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Phone, Mail, MapPin, ArrowUpRight, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, Instagram, Headphones } from "lucide-react";
 import { IMAGES } from "../constants/images";
+import { CONTACT_INFO } from "../constants/contact";
 
 // TikTok SVG Icon component
 function TikTokIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -27,9 +28,9 @@ export default function Footer({ setActiveTab }: FooterProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const address = "Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur";
-  const instagramUrl = "https://www.instagram.com/berlian_kontraktor?igsh=bDYwanJtOWhzcjBr";
-  const tiktokUrl = "https://www.tiktok.com/@berlian_kontraktor?is_from_webapp=1&sender_device=pc";
+  const address = CONTACT_INFO.office.address;
+  const instagramUrl = CONTACT_INFO.socials.instagram;
+  const tiktokUrl = CONTACT_INFO.socials.tiktok;
 
   return (
     <footer className="bg-[#F4F0E8] border-t border-stone-200 text-stone-700 font-sans" id="footer-section">
@@ -40,28 +41,20 @@ export default function Footer({ setActiveTab }: FooterProps) {
           {/* Column 1: Brand Info */}
           <div className="flex flex-col gap-4">
             <div
-              className="flex items-center gap-3 cursor-pointer group w-fit"
+              className="flex items-center cursor-pointer group w-fit"
               onClick={() => handleLinkClick("home")}
               id="footer-brand-logo"
             >
-              <div className="h-10 w-10 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
+              <div className="h-10 sm:h-12 w-auto max-w-[220px] flex items-center bg-transparent border-0 shadow-none transition-transform duration-200 group-hover:scale-105">
                 <img
                   src={IMAGES.companyLogo}
-                  alt="Berlian Kontraktor & Arsitektur Logo"
-                  className="h-full w-full object-contain"
+                  alt="Berlian Kontraktor & Arsitektur"
+                  className="h-full w-auto object-contain"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-black text-stone-900 tracking-wider uppercase leading-none">
-                  BERLIAN
-                </span>
-                <span className="text-[11px] sm:text-xs font-bold text-orange-600 tracking-tight mt-1 leading-none">
-                  Kontraktor & Arsitektur
-                </span>
               </div>
             </div>
             <p className="text-stone-600 text-xs leading-relaxed mt-1">
-              PT. Berlian adalah perusahaan kontraktor yang bergerak di bidang konstruksi, renovasi, dan pembangunan di wilayah Jabodetabek. Kami melayani berbagai kebutuhan proyek mulai dari renovasi kantor, pembangunan rumah tinggal, renovasi gedung, hingga pembangunan gudang industri.
+              Sebagai perusahaan yang berfokus pada inovasi dan keunggulan di bidang konstruksi, Berlian Kontraktor hadir untuk mewujudkan visi Anda dalam membangun masa depan dengan kualitas, ketepatan waktu, dan kepuasan pelanggan.
             </p>
 
             {/* Social Media Badges */}
@@ -127,14 +120,17 @@ export default function Footer({ setActiveTab }: FooterProps) {
             </h3>
             <ul className="space-y-3.5 text-xs">
               {[
-                "Konstruksi & Pembangunan",
-                "Renovasi & Remodeling",
-                "Interior & Plafon",
-                "Perbaikan & Maintenance"
+                "Construction Building",
+                "Design Building",
+                "Home Maintenance"
               ].map((service, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-                  <span className="text-stone-700 text-xs">{service}</span>
+                <li
+                  key={i}
+                  onClick={() => handleLinkClick("services")}
+                  className="flex items-center gap-2 cursor-pointer group w-fit"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-600 group-hover:scale-125 transition-transform" />
+                  <span className="text-stone-700 text-xs group-hover:text-orange-600 transition-colors font-medium">{service}</span>
                 </li>
               ))}
             </ul>
@@ -145,27 +141,64 @@ export default function Footer({ setActiveTab }: FooterProps) {
             <h3 className="text-stone-900 text-xs font-black uppercase tracking-widest mb-6">
               Hubungi Berlian Kontraktor
             </h3>
-            <div className="space-y-4 text-xs">
+            <div className="space-y-3.5 text-xs">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                <span className="leading-relaxed text-stone-700 font-medium">
+                <MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                <span className="leading-relaxed text-stone-700 font-medium text-[11.5px]">
                   {address}
                 </span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-orange-600 shrink-0" />
-                <a
-                  href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-orange-600 text-stone-900 font-extrabold"
-                >
-                  +62 857-1591-0161 (WhatsApp)
-                </a>
+              
+              {/* Konsultasi Proyek */}
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[10px] text-stone-500 font-extrabold uppercase block tracking-wider">
+                    Konsultasi & Estimasi:
+                  </span>
+                  <a
+                    href={CONTACT_INFO.consultation.waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 text-stone-900 font-black text-xs transition-colors"
+                  >
+                    {CONTACT_INFO.consultation.phone}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-orange-600 shrink-0" />
-                <span className="text-stone-700 font-medium">berliancontractor@gmail.com</span>
+
+              {/* CS */}
+              <div className="flex items-start gap-3">
+                <Headphones className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[10px] text-stone-500 font-extrabold uppercase block tracking-wider">
+                    Layanan Pelanggan (CS):
+                  </span>
+                  <a
+                    href={CONTACT_INFO.customerService.waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 text-stone-900 font-black text-xs transition-colors"
+                  >
+                    {CONTACT_INFO.customerService.phone}
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[10px] text-stone-500 font-extrabold uppercase block tracking-wider">
+                    Email Resmi:
+                  </span>
+                  <a
+                    href={CONTACT_INFO.email.mailtoUrl}
+                    className="text-stone-900 hover:text-orange-600 font-bold transition-colors block text-[11.5px]"
+                  >
+                    {CONTACT_INFO.email.address}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

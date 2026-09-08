@@ -54,3 +54,12 @@ export interface ArticleItem {
   content: string;
   image: string;
 }
+
+export interface WorkflowStepItem {
+  step: number;
+  stepNumber: string;
+  title: string;
+  desc: string;
+  badge: string;
+  iconName: string;
+}

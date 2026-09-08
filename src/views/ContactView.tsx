@@ -5,8 +5,9 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram, Calculator, Headphones } from "lucide-react";
 import OptimizedImage from "../components/OptimizedImage";
+import { CONTACT_INFO } from "../constants/contact";
 
 // TikTok SVG Icon component
 function TikTokIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -28,10 +29,10 @@ export default function ContactView() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showMapTooltip, setShowMapTooltip] = useState(true);
 
-  const address = "Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur";
-  const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Jl. Jendral Basuki Rahmat No. 1A, Cipinang Besar Selatan, Jatinegara, Jakarta Timur")}`;
-  const instagramUrl = "https://www.instagram.com/berlian_kontraktor?igsh=bDYwanJtOWhzcjBr";
-  const tiktokUrl = "https://www.tiktok.com/@berlian_kontraktor?is_from_webapp=1&sender_device=pc";
+  const address = CONTACT_INFO.office.address;
+  const mapSearchUrl = CONTACT_INFO.office.gmapsSearchUrl;
+  const instagramUrl = CONTACT_INFO.socials.instagram;
+  const tiktokUrl = CONTACT_INFO.socials.tiktok;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -52,8 +53,8 @@ export default function ContactView() {
 - Ukuran Proyek: ${formData.size || "-"} m²
 - Detail Pesan: ${formData.message}`;
 
-    // Redirect to Whatsapp
-    window.open(`https://wa.me/6285715910161?text=${encodeURIComponent(text)}`, "_blank");
+    // Redirect to Whatsapp Konsultasi Proyek & Estimasi Biaya
+    window.open(`https://wa.me/628111820249?text=${encodeURIComponent(text)}`, "_blank");
     
     setIsSubmitted(true);
     setFormData({ name: "", phone: "", service: "Bangun Baru", message: "", size: "" });
@@ -99,53 +100,141 @@ export default function ContactView() {
               Anda dapat menjadwalkan pertemuan tatap muka di kantor kami atau survei langsung ke lokasi Anda di Jakarta & Jabodetabek.
             </p>
 
-            <div className="space-y-6 text-xs text-stone-700">
-              {/* WA */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-amber-50 rounded-xl text-orange-600 border border-stone-200 shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] text-stone-500 uppercase block font-bold">WhatsApp Call Hub</span>
-                  <a
-                    href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-black text-stone-900 text-sm hover:text-orange-600 transition-colors"
-                  >
-                    +62 857-1591-0161
-                  </a>
-                  <span className="text-[10px] text-stone-500 block leading-tight">Melayani Chat & Telepon 24/7 Hari Kerja</span>
+            <div className="space-y-4 text-xs text-stone-700">
+              {/* 1. Konsultasi Proyek & Estimasi Biaya */}
+              <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs hover:border-orange-500/40 transition-colors">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-orange-600/10 rounded-lg text-orange-600 border border-orange-500/20 shrink-0 mt-0.5">
+                    <Phone className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <div className="space-y-1 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] text-orange-700 uppercase font-extrabold tracking-wider bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
+                        📞 Konsultasi Proyek & Estimasi Biaya
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-2 pt-0.5">
+                      <a
+                        href={CONTACT_INFO.consultation.waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-black text-stone-900 text-base hover:text-orange-600 transition-colors"
+                      >
+                        {CONTACT_INFO.consultation.phone}
+                      </a>
+                    </div>
+                    <p className="text-[11px] text-stone-500 leading-snug">
+                      Perhitungan RAB, konsultasi arsitektur, survey lokasi gratis, & estimasi proyek.
+                    </p>
+                    <div className="flex items-center gap-2 pt-1.5">
+                      <a
+                        href={CONTACT_INFO.consultation.waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-white bg-orange-600 hover:bg-orange-700 px-2.5 py-1 rounded-md transition-colors shadow-2xs"
+                      >
+                        <MessageSquare className="w-3 h-3" />
+                        <span>Chat WhatsApp</span>
+                      </a>
+                      <a
+                        href={CONTACT_INFO.consultation.telUrl}
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1 rounded-md transition-colors border border-stone-200"
+                      >
+                        <Phone className="w-3 h-3 text-stone-600" />
+                        <span>Telepon</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-amber-50 rounded-xl text-orange-600 border border-stone-200 shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] text-stone-500 uppercase block font-bold">Email Kantor Resmi</span>
-                  <a href="mailto:berliancontractor@gmail.com" className="font-black text-stone-900 text-sm hover:text-orange-600 transition-colors block">
-                    berliancontractor@gmail.com
-                  </a>
-                  <span className="text-[10px] text-stone-500 block leading-tight">Pengajuan berkas rancangan & kerja sama vendor</span>
+              {/* 2. Layanan Pelanggan (CS) */}
+              <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs hover:border-orange-500/40 transition-colors">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-blue-600/10 rounded-lg text-blue-600 border border-blue-500/20 shrink-0 mt-0.5">
+                    <Headphones className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div className="space-y-1 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] text-blue-700 uppercase font-extrabold tracking-wider bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                        💬 Layanan Pelanggan (CS)
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-2 pt-0.5">
+                      <a
+                        href={CONTACT_INFO.customerService.waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-black text-stone-900 text-base hover:text-orange-600 transition-colors"
+                      >
+                        {CONTACT_INFO.customerService.phone}
+                      </a>
+                    </div>
+                    <p className="text-[11px] text-stone-500 leading-snug">
+                      Informasi administrasi kerja sama, bantuan umum, & pelayanan klien aktif.
+                    </p>
+                    <div className="flex items-center gap-2 pt-1.5">
+                      <a
+                        href={CONTACT_INFO.customerService.waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-white bg-stone-900 hover:bg-orange-600 px-2.5 py-1 rounded-md transition-colors shadow-2xs"
+                      >
+                        <MessageSquare className="w-3 h-3" />
+                        <span>Chat CS</span>
+                      </a>
+                      <a
+                        href={CONTACT_INFO.customerService.telUrl}
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1 rounded-md transition-colors border border-stone-200"
+                      >
+                        <Phone className="w-3 h-3 text-stone-600" />
+                        <span>Telepon</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Address */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-amber-50 rounded-xl text-orange-600 border border-stone-200 shrink-0">
-                  <MapPin className="w-5 h-5" />
+              {/* 3. Email Resmi */}
+              <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs hover:border-orange-500/40 transition-colors">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-amber-50 rounded-lg text-orange-600 border border-stone-200 shrink-0 mt-0.5">
+                    <Mail className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <div className="space-y-1 flex-1">
+                    <span className="text-[10px] text-stone-500 uppercase block font-extrabold tracking-wider">
+                      📧 Email Resmi Perusahaan
+                    </span>
+                    <a
+                      href={CONTACT_INFO.email.mailtoUrl}
+                      className="font-black text-stone-900 text-sm hover:text-orange-600 transition-colors block"
+                    >
+                      {CONTACT_INFO.email.address}
+                    </a>
+                    <span className="text-[11px] text-stone-500 block leading-tight">
+                      Pengajuan berkas rancangan, penawaran vendor, & kerja sama korporat
+                    </span>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] text-stone-500 uppercase block font-bold">Alamat Fisik Kantor</span>
-                  <span className="font-extrabold text-stone-900 text-xs leading-relaxed block">
-                    {address}
-                  </span>
-                  <span className="text-[10px] text-stone-500 block leading-tight pt-1 italic font-medium">
-                    *Cipinang Besar Selatan, Jatinegara, Jakarta Timur
-                  </span>
+              </div>
+
+              {/* 4. Alamat Fisik Kantor */}
+              <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-amber-50 rounded-lg text-orange-600 border border-stone-200 shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <div className="space-y-1 flex-1">
+                    <span className="text-[10px] text-stone-500 uppercase block font-extrabold tracking-wider">
+                      📍 Alamat Fisik Kantor
+                    </span>
+                    <span className="font-extrabold text-stone-900 text-xs leading-relaxed block">
+                      {address}
+                    </span>
+                    <span className="text-[10px] text-stone-500 block leading-tight pt-0.5 italic font-medium">
+                      *Cipinang Besar Selatan, Jatinegara, Jakarta Timur
+                    </span>
+                  </div>
                 </div>
               </div>
 

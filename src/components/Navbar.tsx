@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
 import { IMAGES } from "../constants/images";
+import { CONTACT_INFO } from "../constants/contact";
 
 interface NavbarProps {
   activeTab: string;
@@ -47,8 +48,8 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-stone-200/80 py-3"
-          : "bg-[#FAF8F5]/80 backdrop-blur-sm py-4 border-b border-stone-200/40"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200 py-3"
+          : "bg-white py-4 border-b border-stone-200/60"
       }`}
       id="main-navigation-nav"
     >
@@ -57,24 +58,16 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           
           {/* Logo Brand Berlian Kontraktor & Arsitektur */}
           <div
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center cursor-pointer group"
             onClick={() => handleNavClick("home")}
             id="navbar-brand-logo"
           >
-            <div className="h-10 w-10 sm:h-11 sm:w-11 p-1 bg-white border border-stone-200 shadow-sm rounded-lg flex items-center justify-center group-hover:scale-105 group-hover:border-orange-500 transition-all overflow-hidden shrink-0">
+            <div className="h-10 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px] flex items-center bg-transparent border-0 shadow-none transition-transform duration-200 group-hover:scale-105">
               <img
                 src={IMAGES.companyLogo}
-                alt="Berlian Kontraktor & Arsitektur Logo"
-                className="h-full w-full object-contain"
+                alt="Berlian Kontraktor & Arsitektur"
+                className="h-full w-auto object-contain max-h-12 sm:max-h-14"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base sm:text-lg md:text-xl font-black text-stone-900 tracking-wider uppercase leading-none">
-                BERLIAN
-              </span>
-              <span className="text-[10.5px] sm:text-xs font-bold text-orange-600 tracking-tight mt-1 leading-none">
-                Kontraktor & Arsitektur
-              </span>
             </div>
           </div>
 
@@ -99,14 +92,14 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           {/* Call-to-Action WhatsApp Hub Button */}
           <div className="hidden lg:block">
             <a
-              href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
+              href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-stone-900 hover:bg-orange-600 text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-stone-800 hover:border-orange-600 transition-all shadow-md group"
               id="cta-wa-nav"
             >
               <Phone className="w-4 h-4 text-orange-400 group-hover:text-white transition-colors" />
-              <span>+62 857-1591-0161</span>
+              <span>{CONTACT_INFO.consultation.phone}</span>
             </a>
           </div>
 
@@ -132,7 +125,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#FAF8F5] border-b border-stone-200 shadow-xl"
+            className="md:hidden bg-white border-b border-stone-200 shadow-xl"
             id="mobile-links-panel"
           >
             <div className="px-4 pt-3 pb-6 space-y-2 flex flex-col">
@@ -152,14 +145,14 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
               ))}
               <div className="pt-4 border-t border-stone-200">
                 <a
-                  href="https://wa.me/6285715910161?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20layanan%20konstruksi"
+                  href={CONTACT_INFO.consultation.waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs py-3 rounded-xl uppercase tracking-wider transition-all"
                   id="cta-wa-nav-mobile"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>KONSULTASI WHATSAPP</span>
+                  <span>KONSULTASI WHATSAPP ({CONTACT_INFO.consultation.phone})</span>
                 </a>
               </div>
             </div>

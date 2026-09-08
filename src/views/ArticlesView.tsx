@@ -6,6 +6,7 @@
 import { motion } from "motion/react";
 import { Clock, User, ArrowLeft, Calendar, Share2, BookOpen } from "lucide-react";
 import { ARTICLES_DATA } from "../data";
+import { CONTACT_INFO } from "../constants/contact";
 import OptimizedImage from "../components/OptimizedImage";
 
 interface ArticlesViewProps {
@@ -19,7 +20,7 @@ export default function ArticlesView({ selectedArticle, setSelectedArticle }: Ar
 
   const handleShareWa = (title: string) => {
     const text = `Saya baru saja membaca artikel menarik ini dari Berlian Kontraktor: "${title}". Sangat direkomendasikan bagi yang ingin mendirikan rumah atau ruko!`;
-    window.open(`https://wa.me/6285715910161?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/62${CONTACT_INFO.customerService.rawPhone.replace(/^0/, "")}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   // Full Read Mode Layout

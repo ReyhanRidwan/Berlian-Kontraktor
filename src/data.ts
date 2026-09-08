@@ -3,64 +3,93 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ServiceItem, ProjectItem, TestimonialItem, FaqItem, ArticleItem } from "./types";
+import { ServiceItem, ProjectItem, TestimonialItem, FaqItem, ArticleItem, WorkflowStepItem } from "./types";
 import { IMAGES } from "./constants/images";
+
+export const WORKFLOW_STEPS: WorkflowStepItem[] = [
+  {
+    step: 1,
+    stepNumber: "01",
+    title: "Survey Lokasi",
+    desc: "Survei lokasi mencakup persiapan, kunjungan lokasi, pengukuran lapangan, kajian lingkungan, dan pemeriksaan legalitas. Hasilnya dirangkum dalam laporan untuk mendukung perencanaan proyek.",
+    badge: "Gratis Survei",
+    iconName: "MapPin"
+  },
+  {
+    step: 2,
+    stepNumber: "02",
+    title: "Desain dan Pembuatan RAB",
+    desc: "Tahapan desain dan RAB mencakup pengembangan desain, perhitungan biaya berdasarkan pekerjaan, serta verifikasi agar sesuai kebutuhan dan anggaran klien. Hasilnya menjadi acuan proyek.",
+    badge: "Desain & RAB",
+    iconName: "DraftingCompass"
+  },
+  {
+    step: 3,
+    stepNumber: "03",
+    title: "Pengurusan Administrasi",
+    desc: "Jika dirasa sudah sesuai dari segi harga, tahap selanjutnya adalah menandatangani Surat Perjanjian Kerja (SPK).",
+    badge: "Tanda Tangan SPK",
+    iconName: "FileSignature"
+  },
+  {
+    step: 4,
+    stepNumber: "04",
+    title: "Pelaksanaan Pembangunan",
+    desc: "Pembangunan dilaksanakan sesuai waktu yang sudah disepakati bersama di SPK.",
+    badge: "Sesuai Jadwal SPK",
+    iconName: "HardHat"
+  },
+  {
+    step: 5,
+    stepNumber: "05",
+    title: "Pembangunan Selesai!",
+    desc: "Pembangunan sudah selesai, hunian impian Anda terwujud!",
+    badge: "Hunian Terwujud",
+    iconName: "Award"
+  }
+];
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: "konstruksi-pembangunan",
-    title: "Konstruksi & Pembangunan",
-    icon: "Hammer",
-    image: IMAGES.serviceNewBuild,
-    description: "Pembangunan rumah tinggal, gedung komersial, gudang industri, dan fasilitas umum dari nol hingga selesai.",
+    id: "construction-building",
+    title: "Construction Building",
+    icon: "Building2",
+    image: IMAGES.serviceConstructionBuilding,
+    description: "Berlian Kontraktor menawarkan layanan pembangunan rumah yang profesional, berkualitas, efisien, dan sesuai kebutuhan pelanggan.",
     features: [
-      "Pembangunan Rumah Tinggal & Villa",
-      "Konstruksi Gedung Komersial & Kantor",
-      "Pembangunan Gudang Industri & Fasilitas Umum",
-      "Perencanaan Struktur & Fondasi Kokoh",
-      "Laporan Progres Pengerjaan Tepat Waktu"
+      "Pembangunan Rumah Tinggal & Villa Mewah",
+      "Struktur & Fondasi Kokoh Standar SNI",
+      "Manajemen Proyek Efisien & Tepat Waktu",
+      "Material Berkualitas & Tenaga Ahli Profesional",
+      "Laporan Progres Pengerjaan Transparan & Berkala"
     ]
   },
   {
-    id: "renovasi-remodeling",
-    title: "Renovasi & Remodeling",
+    id: "design-building",
+    title: "Design Building",
+    icon: "DraftingCompass",
+    image: IMAGES.serviceDesignBuilding,
+    description: "Berlian Kontraktor menyediakan layanan desain bangunan kreatif dan fungsional, bekerja sama dengan arsitek profesional untuk menghasilkan desain yang estetis, efisien, dan sesuai anggaran.",
+    features: [
+      "Desain Arsitektur Kreatif & Tata Ruang Fungsional",
+      "Kolaborasi Bersama Arsitek Profesional",
+      "Visualisasi 3D Eksterior & Interior Estetis",
+      "Perencanaan Gambar Kerja & Estimasi Anggaran Efisien",
+      "Konsultasi & Revisi Desain Menyesuaikan Kebutuhan Klien"
+    ]
+  },
+  {
+    id: "home-maintenance",
+    title: "Home Maintenance",
     icon: "Wrench",
-    image: IMAGES.serviceRenovation,
-    description: "Renovasi kantor, villa, gedung, dan hunian dengan hasil modern dan fungsional.",
+    image: IMAGES.serviceHomeMaintenance,
+    description: "Berlian Kontraktor menyediakan layanan perawatan rumah, seperti perbaikan kebocoran, pengecatan, dan perbaikan lainnya, dengan hasil yang cepat, rapi, dan berkualitas untuk menjaga hunian tetap nyaman dan tahan lama",
     features: [
-      "Renovasi Kantor, Villa, Ruko & Gedung",
-      "Remodeling Interior & Fasad Eksterior",
-      "Perbaikan & Peremajaan Struktur Bangunan",
-      "Pengoptimalan Tata Ruang Modern & Fungsional",
-      "Pengerjaan Rapi & Sesuai Anggaran"
-    ]
-  },
-  {
-    id: "interior-plafon",
-    title: "Interior & Plafon",
-    icon: "Paintbrush",
-    image: IMAGES.serviceArchitecture,
-    description: "Pemasangan plafon gypsum & PVC, partisi gypsum, dan pekerjaan interior lainnya.",
-    features: [
-      "Pemasangan Plafon Gypsum & PVC",
-      "Pemasangan Partisi Gypsum & Sekat Ruang",
-      "Desain & Pengerjaan Elemen Interior Modern",
-      "Pengecatan & Finishing Rapi Halus",
-      "Material Berkualitas Tinggi & Presisi"
-    ]
-  },
-  {
-    id: "perbaikan-maintenance",
-    title: "Perbaikan & Maintenance",
-    icon: "ShieldCheck",
-    image: IMAGES.serviceContractor,
-    description: "Perbaikan plafon bocor/jebol, perawatan bangunan, dan pekerjaan sipil ringan.",
-    features: [
-      "Perbaikan Plafon Bocor & Jebol",
-      "Perawatan Rutin & Pemeliharaan Bangunan",
-      "Pekerjaan Sipil Ringan & Retak Dinding",
-      "Inspeksi Atap, Waterproofing & Sanitasi",
-      "Layanan Tanggap & Hasil Berkualitas"
+      "Perbaikan Kebocoran Atap, Talang Air & Waterproofing",
+      "Pengecatan Ulang Dinding Interior & Eksterior",
+      "Perawatan & Renovasi Ringan Berkala",
+      "Pengerjaan Cepat, Rapi & Standar Mutu Terjaga",
+      "Solusi Menjaga Kenyamanan & Daya Tahan Hunian"
     ]
   }
 ];

@@ -31,12 +31,16 @@ export function optimizeCloudinaryUrl(url: string): string {
 
 export const IMAGES = {
   // Company Logo
-  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788770253/image_c13c9b75_w0u8oy.jpg",
+  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788837269/02347409-c2f7-4734-abfd-4a8d3b12d0be.png",
 
   // Hero section
-  hero1: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
-  hero2: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
-  hero3: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
+  hero1: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788838884/f757d46a-0f01-494d-b14d-5e41db03491a.png",
+  hero2: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788840225/watermark-removed-image_jgd18h.png",
+  hero3: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788841183/watermark-removed-image_1_fyuxn5.png",
+
+  // Featured Projects in Home (from projects documentation)
+  wismaEms: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
+  villaTeguh: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
 
   // Services highlight
   serviceHighlight: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941746/naksha-banwao-3ddHcjHmiGw-unsplash_jdslxv.jpg"),
@@ -73,10 +77,13 @@ export const IMAGES = {
   ],
 
   // Services page individual images (using real project documentation photos)
-  serviceNewBuild: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
+  serviceConstructionBuilding: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852095/91891168-efae-43f2-a95e-f2652aed341b.png"),
+  serviceDesignBuilding: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852230/4ee9421f-e3d1-48dc-8991-de9539a1e282.png"),
+  serviceHomeMaintenance: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852233/c0a8debf-6e65-437b-b68d-1260814e6fd5.png"),
+  serviceNewBuild: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852095/91891168-efae-43f2-a95e-f2652aed341b.png"),
   serviceRenovation: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
-  serviceArchitecture: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
-  serviceContractor: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
+  serviceArchitecture: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852230/4ee9421f-e3d1-48dc-8991-de9539a1e282.png"),
+  serviceContractor: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852233/c0a8debf-6e65-437b-b68d-1260814e6fd5.png"),
 
   // About page individual images
   teamConstruction: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941792/ronnakorn-triraganon-IvEYfb-3B70-unsplash_fwhdz6.jpg"),
