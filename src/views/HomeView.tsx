@@ -10,6 +10,7 @@ import { SERVICES_DATA, PROJECTS_DATA, TESTIMONIALS_DATA, ARTICLES_DATA, FAQS_DA
 import { IMAGES } from "../constants/images";
 import { CONTACT_INFO } from "../constants/contact";
 import OptimizedImage from "../components/OptimizedImage";
+import WhatsAppIcon from "../components/WhatsAppIcon";
 
 interface HomeViewProps {
   setActiveTab: (tab: string) => void;
@@ -223,16 +224,16 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
 
         {/* Content Box (Centered & Highly Legible) */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
-          {/* Top Badge: Tagline Design. Build. Home */}
+          {/* Top Badge: Tagline Design - Building - Maintenance */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mb-5 px-5 py-2 rounded-full bg-white/95 backdrop-blur-md border border-orange-300 shadow-md inline-flex items-center gap-2"
+            className="mb-5 px-5 py-2 rounded-full bg-stone-900/80 backdrop-blur-md border border-white/20 shadow-lg inline-flex items-center gap-2"
             id="hero-badge"
           >
-            <span className="text-xs sm:text-sm font-black text-orange-600 tracking-[0.2em] uppercase">
-              Design. Build. Home.
+            <span className="text-xs sm:text-sm font-black text-white tracking-[0.2em] uppercase">
+              Design - Building - Maintenance
             </span>
           </motion.div>
 
@@ -659,9 +660,10 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-stone-900 text-white font-black text-xs uppercase px-8 py-4 rounded-full hover:bg-white hover:text-orange-600 transition-all tracking-wider shadow-xl inline-flex items-center gap-2"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-8 py-4 rounded-full transition-all tracking-wider shadow-xl inline-flex items-center gap-2.5 hover:scale-105 active:scale-95 border-2 border-white/20"
               id="btn-cta-wa"
             >
+              <WhatsAppIcon className="w-5 h-5 fill-current text-white" />
               <span>Hubungi via WhatsApp ({CONTACT_INFO.consultation.phone})</span>
             </a>
             <button

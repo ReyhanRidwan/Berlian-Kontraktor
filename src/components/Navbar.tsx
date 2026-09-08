@@ -6,6 +6,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { IMAGES } from "../constants/images";
 import { CONTACT_INFO } from "../constants/contact";
 
@@ -66,7 +67,7 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
               <img
                 src={IMAGES.companyLogo}
                 alt="Berlian Kontraktor & Arsitektur"
-                className="h-full w-auto object-contain max-h-12 sm:max-h-14"
+                className="h-full w-auto object-contain max-h-12 sm:max-h-14 bg-transparent"
               />
             </div>
           </div>
@@ -95,11 +96,12 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
               href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-stone-900 hover:bg-orange-600 text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-stone-800 hover:border-orange-600 transition-all shadow-md group"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-emerald-500/50 transition-all shadow-md group"
               id="cta-wa-nav"
+              title="Hubungi WhatsApp Admin"
             >
-              <Phone className="w-4 h-4 text-orange-400 group-hover:text-white transition-colors" />
-              <span>{CONTACT_INFO.consultation.phone}</span>
+              <WhatsAppIcon className="w-4 h-4 fill-current text-white" />
+              <span>WA {CONTACT_INFO.consultation.phone}</span>
             </a>
           </div>
 
@@ -148,11 +150,11 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
                   href={CONTACT_INFO.consultation.waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs py-3 rounded-xl uppercase tracking-wider transition-all"
+                  className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs py-3.5 rounded-xl uppercase tracking-wider transition-all shadow-md"
                   id="cta-wa-nav-mobile"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>KONSULTASI WHATSAPP ({CONTACT_INFO.consultation.phone})</span>
+                  <WhatsAppIcon className="w-4 h-4 fill-current text-white" />
+                  <span>HUBUNGI WHATSAPP ADMIN ({CONTACT_INFO.consultation.phone})</span>
                 </a>
               </div>
             </div>

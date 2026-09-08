@@ -5,8 +5,9 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram, Calculator, Headphones } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram, Calculator, Headphones } from "lucide-react";
 import OptimizedImage from "../components/OptimizedImage";
+import WhatsAppIcon from "../components/WhatsAppIcon";
 import { CONTACT_INFO } from "../constants/contact";
 
 // TikTok SVG Icon component
@@ -131,14 +132,14 @@ export default function ContactView() {
                         href={CONTACT_INFO.consultation.waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-white bg-orange-600 hover:bg-orange-700 px-2.5 py-1 rounded-md transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1.5 text-[10.5px] font-extrabold text-white bg-[#25D366] hover:bg-[#20bd5a] px-3 py-1.5 rounded-md transition-colors shadow-2xs"
                       >
-                        <MessageSquare className="w-3 h-3" />
-                        <span>Chat WhatsApp</span>
+                        <WhatsAppIcon className="w-3.5 h-3.5" />
+                        <span>Chat WhatsApp Admin</span>
                       </a>
                       <a
                         href={CONTACT_INFO.consultation.telUrl}
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1 rounded-md transition-colors border border-stone-200"
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1.5 rounded-md transition-colors border border-stone-200"
                       >
                         <Phone className="w-3 h-3 text-stone-600" />
                         <span>Telepon</span>
@@ -178,14 +179,14 @@ export default function ContactView() {
                         href={CONTACT_INFO.customerService.waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-white bg-stone-900 hover:bg-orange-600 px-2.5 py-1 rounded-md transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1.5 text-[10.5px] font-extrabold text-white bg-[#25D366] hover:bg-[#20bd5a] px-3 py-1.5 rounded-md transition-colors shadow-2xs"
                       >
-                        <MessageSquare className="w-3 h-3" />
-                        <span>Chat CS</span>
+                        <WhatsAppIcon className="w-3.5 h-3.5" />
+                        <span>Chat WhatsApp CS</span>
                       </a>
                       <a
                         href={CONTACT_INFO.customerService.telUrl}
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1 rounded-md transition-colors border border-stone-200"
+                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1.5 rounded-md transition-colors border border-stone-200"
                       >
                         <Phone className="w-3 h-3 text-stone-600" />
                         <span>Telepon</span>
@@ -385,15 +386,25 @@ export default function ContactView() {
                 </div>
 
                 {/* Submit trigger button */}
-                <div className="pt-2">
+                <div className="pt-2 flex flex-col gap-3">
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-extrabold text-xs py-4 px-6 rounded-lg uppercase tracking-wider transition-all cursor-pointer shadow-md"
+                    className="inline-flex w-full items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs py-4 px-6 rounded-xl uppercase tracking-wider transition-all cursor-pointer shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99]"
                     id="btn-submit-contact-form"
                   >
-                    <span>Kirim & Hubungkan ke WA</span>
-                    <Send className="w-4 h-4" />
+                    <WhatsAppIcon className="w-5 h-5 fill-current" />
+                    <span>Kirim Pesan ke WhatsApp Admin</span>
                   </button>
+
+                  <a
+                    href={CONTACT_INFO.consultation.waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 border border-emerald-600/30 hover:bg-emerald-50 text-emerald-800 font-extrabold text-[11px] py-2.5 px-4 rounded-xl transition-all"
+                  >
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    <span>Atau Chat Langsung WhatsApp Admin Tanpa Isi Formulir</span>
+                  </a>
                 </div>
 
               </form>

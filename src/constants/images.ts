@@ -30,8 +30,8 @@ export function optimizeCloudinaryUrl(url: string): string {
 }
 
 export const IMAGES = {
-  // Company Logo
-  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788837269/02347409-c2f7-4734-abfd-4a8d3b12d0be.png",
+  // Company Logo (Fully Transparent with Cloudinary AI background removal)
+  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,e_background_removal/v1788884322/02347409-c2f7-4734-abfd-4a8d3b12d0be-removebg-preview_yvwivx.png",
 
   // Hero section - Extreme Speed Optimized for LCP & CLS (Google Ads & PageSpeed)
   heroSlide1: {
@@ -56,7 +56,7 @@ export const IMAGES = {
 
   // Featured Projects in Home (from projects documentation)
   wismaEms: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),
-  villaTeguh: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
+  villaTeguh: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
 
   // Services highlight
   serviceHighlight: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941746/naksha-banwao-3ddHcjHmiGw-unsplash_jdslxv.jpg"),
@@ -97,7 +97,7 @@ export const IMAGES = {
   serviceDesignBuilding: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852230/4ee9421f-e3d1-48dc-8991-de9539a1e282.png"),
   serviceHomeMaintenance: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852233/c0a8debf-6e65-437b-b68d-1260814e6fd5.png"),
   serviceNewBuild: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852095/91891168-efae-43f2-a95e-f2652aed341b.png"),
-  serviceRenovation: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
+  serviceRenovation: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
   serviceArchitecture: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852230/4ee9421f-e3d1-48dc-8991-de9539a1e282.png"),
   serviceContractor: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1788852233/c0a8debf-6e65-437b-b68d-1260814e6fd5.png"),
 

@@ -49,7 +49,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
                 <img
                   src={IMAGES.companyLogo}
                   alt="Berlian Kontraktor & Arsitektur"
-                  className="h-full w-auto object-contain"
+                  className="h-full w-auto object-contain bg-transparent"
                 />
               </div>
             </div>

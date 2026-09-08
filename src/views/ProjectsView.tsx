@@ -74,9 +74,9 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       title: "Renovasi Villa Bpk Teguh, Puncak - Bogor",
       location: "Puncak, Bogor",
       category: "Renovasi",
-      shapeLabel: "Vertikal",
+      shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
-      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp",
+      image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
       description: "Peremajaan dan pengerjaan renovasi lanskap serta interior Villa Bpk Teguh di dataran tinggi Puncak Bogor."
     },
     {
