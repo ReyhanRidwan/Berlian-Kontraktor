@@ -33,10 +33,26 @@ export const IMAGES = {
   // Company Logo
   companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788837269/02347409-c2f7-4734-abfd-4a8d3b12d0be.png",
 
-  // Hero section
-  hero1: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788838884/f757d46a-0f01-494d-b14d-5e41db03491a.png",
-  hero2: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788840225/watermark-removed-image_jgd18h.png",
-  hero3: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788841183/watermark-removed-image_1_fyuxn5.png",
+  // Hero section - Extreme Speed Optimized for LCP & CLS (Google Ads & PageSpeed)
+  heroSlide1: {
+    raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+    desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+  },
+  heroSlide2: {
+    raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+    desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+  },
+  heroSlide3: {
+    raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
+    desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
+  },
+
+  hero1: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+  hero2: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+  hero3: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
 
   // Featured Projects in Home (from projects documentation)
   wismaEms: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"),

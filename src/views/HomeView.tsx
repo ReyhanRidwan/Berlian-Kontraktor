@@ -17,22 +17,30 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewProps) {
-  // Hero Carousel with Horizontal Slide Transitions
+  // Hero Carousel Slides - Optimized for Google Ads & PageSpeed (LCP & CLS)
   const heroSlides = [
     {
-      image: IMAGES.hero1,
-      title: "Proyek Konstruksi & Renovasi Berlian",
-      location: "Jabodetabek"
+      id: 1,
+      title: "Solusi Terpercaya Untuk Konstruksi Bangunan & Renovasi Hunian",
+      location: "Jabodetabek",
+      // Laptop / Desktop (min-width: 1024px)
+      desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+      // HP / Mobile (default)
+      mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
     },
     {
-      image: IMAGES.hero2,
-      title: "Pembangunan Rumah & Desain Arsitektur",
-      location: "Jabodetabek"
+      id: 2,
+      title: "Pembangunan Rumah & Desain Arsitektur Modern",
+      location: "Jabodetabek",
+      desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+      mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
     },
     {
-      image: IMAGES.hero3,
-      title: "Pekerjaan Struktur & Renovasi Modern",
-      location: "Jabodetabek"
+      id: 3,
+      title: "Pekerjaan Struktur & Renovasi Berkualitas Tinggi",
+      location: "Jabodetabek",
+      desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
+      mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
     }
   ];
   
@@ -60,6 +68,39 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
       paginate(1);
     }, 5500);
     return () => clearInterval(interval);
+  }, []);
+
+  // Deferred prefetch for slides 2 & 3 ONLY after the page has finished loading
+  // to reserve 100% initial bandwidth for Slide 1 (LCP)
+  useEffect(() => {
+    const deferLoadSecondarySlides = () => {
+      const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
+      [heroSlides[1], heroSlides[2]].forEach((slide) => {
+        const img = new Image();
+        img.src = isDesktop ? slide.desktop : slide.mobile;
+        img.loading = "lazy";
+      });
+    };
+
+    if (typeof window !== "undefined") {
+      if (document.readyState === "complete") {
+        if ("requestIdleCallback" in window) {
+          (window as any).requestIdleCallback(deferLoadSecondarySlides, { timeout: 3500 });
+        } else {
+          setTimeout(deferLoadSecondarySlides, 3000);
+        }
+      } else {
+        const onLoad = () => {
+          if ("requestIdleCallback" in window) {
+            (window as any).requestIdleCallback(deferLoadSecondarySlides, { timeout: 3500 });
+          } else {
+            setTimeout(deferLoadSecondarySlides, 3000);
+          }
+        };
+        window.addEventListener("load", onLoad);
+        return () => window.removeEventListener("load", onLoad);
+      }
+    }
   }, []);
 
   const slideVariants = {
@@ -115,8 +156,12 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
   return (
     <div className="font-sans text-stone-900 bg-[#FAF8F5]" id="home-view-container">
       
-      {/* 1. HERO SECTION: AUTOPLAY Carousel (Horizontal Slide Transition) */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white" id="hero-carousel-section">
+      {/* 1. HERO SECTION: Ultra-Optimized Responsive Carousel for Google Ads & PageSpeed */}
+      <section 
+        className="relative w-full h-[85vh] min-h-[580px] max-h-[960px] lg:h-screen flex items-center justify-center overflow-hidden bg-stone-900" 
+        id="hero-carousel-section"
+        style={{ contain: "paint layout" }}
+      >
         {/* Carousel Slides with Left/Right Slide Transition */}
         <div className="absolute inset-0 overflow-hidden" id="carousel-slides-wrapper">
           <AnimatePresence initial={false} custom={slideState.direction}>
@@ -129,14 +174,31 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               exit="exit"
               className="absolute inset-0 w-full h-full"
             >
-              <img
-                src={heroSlides[slideState.current].image}
-                alt={heroSlides[slideState.current].title}
-                className="w-full h-full object-cover"
-              />
+              <picture className="w-full h-full block">
+                {/* 1. Laptop / Desktop Source (min-width: 1024px) */}
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={heroSlides[slideState.current].desktop}
+                />
+                {/* 2. Mobile Source (default fallback) with locked dimensions for zero CLS */}
+                <img
+                  src={heroSlides[slideState.current].mobile}
+                  alt={heroSlides[slideState.current].title}
+                  width="1400"
+                  height="800"
+                  loading={slideState.current === 0 ? "eager" : "lazy"}
+                  fetchPriority={slideState.current === 0 ? "high" : "low"}
+                  decoding={slideState.current === 0 ? "sync" : "async"}
+                  className="w-full h-full object-cover object-center select-none pointer-events-none"
+                  style={{ aspectRatio: "1400 / 800" }}
+                />
+              </picture>
             </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Contrast Scrim to enhance text readability over all slide photos */}
+        <div className="absolute inset-0 bg-stone-950/30 backdrop-brightness-[0.88] z-[2] pointer-events-none" />
 
         {/* Previous & Next Navigation Arrows */}
         <button
@@ -179,7 +241,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-orange-800 tracking-tight leading-tight uppercase max-w-3xl"
+            className="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-orange-600 drop-shadow-md tracking-tight leading-tight uppercase max-w-3xl"
             id="hero-main-title"
           >
             SOLUSI TERPERCAYA UNTUK KONSTRUKSI BANGUNAN & RENOVASI HUNIAN ANDA
@@ -190,7 +252,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-5 text-black text-xs md:text-sm leading-relaxed max-w-2xl font-semibold"
+            className="mt-5 text-white drop-shadow-sm text-xs md:text-sm leading-relaxed max-w-2xl font-medium"
             id="hero-subtext"
           >
             Dari pembangunan gedung, rumah tinggal, hingga renovasi total, PT. Berlian Kontraktor siap mewujudkan bangunan yang kokoh, fungsional, dan bernilai tinggi.
