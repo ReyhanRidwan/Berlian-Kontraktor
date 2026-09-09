@@ -55,7 +55,71 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="flex flex-col min-h-screen bg-[#FAF8F5] font-sans selection:bg-orange-600 selection:text-white" id="main-app-container">
+        <!-- Static Navbar Placeholder to avoid CLS -->
+        <nav class="fixed top-0 left-0 w-full z-50 bg-white py-4 border-b border-stone-200/60" id="main-navigation-nav">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center" id="navbar-brand-logo">
+                <div class="h-10 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px] flex items-center">
+                  <img
+                    src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,e_background_removal/v1788884322/02347409-c2f7-4734-abfd-4a8d3b12d0be-removebg-preview_yvwivx.png"
+                    alt="Berlian Kontraktor & Arsitektur"
+                    class="h-full w-auto object-contain max-h-12 sm:max-h-14"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- Critical Above-The-Fold Hero Section directly in HTML -->
+        <main class="flex-grow pt-[108px] md:pt-[116px]">
+          <div class="font-sans text-stone-900 bg-[#FAF8F5]" id="home-view-container">
+            <section class="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-stone-950" id="hero-carousel-section">
+              <div class="absolute inset-0 z-0">
+                <img
+                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png"
+                  alt="Proyek Konstruksi dan Renovasi Berlian Kontraktor"
+                  class="w-full h-full object-cover object-center"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-stone-950/60 backdrop-brightness-75"></div>
+              </div>
+              <div class="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
+                <div class="mb-5 px-5 py-2 rounded-full bg-stone-900/80 border border-white/20 shadow-lg inline-flex items-center gap-2" id="hero-badge">
+                  <span class="text-xs sm:text-sm font-black text-white tracking-[0.2em] uppercase">
+                    Design - Building - Maintenance
+                  </span>
+                </div>
+                <h1
+                  class="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-md tracking-tight leading-tight uppercase max-w-3xl"
+                  id="hero-main-title"
+                >
+                  SOLUSI TERPERCAYA UNTUK KONSTRUKSI BANGUNAN &amp; RENOVASI HUNIAN ANDA
+                </h1>
+                <p
+                  class="mt-5 text-white drop-shadow-sm text-xs md:text-sm leading-relaxed max-w-2xl font-medium"
+                  id="hero-subtext"
+                >
+                  Dari pembangunan gedung, rumah tinggal, hingga renovasi total, PT. Berlian Kontraktor siap mewujudkan bangunan yang kokoh, fungsional, dan bernilai tinggi.
+                </p>
+                <div class="mt-8" id="hero-cta-btn-wrapper">
+                  <span
+                    class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-orange-600 text-white text-xs md:text-sm font-black uppercase tracking-widest py-3.5 px-8 shadow-xl"
+                    id="hero-cta-button"
+                  >
+                    <span>Mulai Konsultasi Proyek &rarr;</span>
+                  </span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
     <script type="module" defer src="/src/main.tsx"></script>
   </body>
 </html>

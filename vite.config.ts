@@ -29,19 +29,17 @@ export default defineConfig(() => {
       minify: 'esbuild',
       rollupOptions: {
         output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              if (id.includes('react') || id.includes('react-dom') || id.includes('motion')) {
-                return 'vendor-framework';
-              }
-              if (id.includes('lucide-react')) {
-                return 'vendor-icons';
-              }
-              return 'vendor-utils';
-            }
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom', 'scheduler'],
+            'vendor-motion': ['motion', 'framer-motion'],
+            'vendor-icons': ['lucide-react']
           },
         },
       },
+    },
+    esbuild: {
+      drop: ['console', 'debugger'],
+      legalComments: 'none',
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.

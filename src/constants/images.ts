@@ -55,10 +55,10 @@ export const IMAGES = {
   hero3: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
 
   // Featured Projects in Home (from projects documentation)
-  wismaEms: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_662,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp",
+  wismaEms: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp",
   villaTeguh: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
-  kantorCakung: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
-  alunIndahCakung: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"),
+  kantorCakung: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_486,c_limit/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
+  alunIndahCakung: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_486,c_limit/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
 
   // Services highlight
   serviceHighlight: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778941746/naksha-banwao-3ddHcjHmiGw-unsplash_jdslxv.jpg"),

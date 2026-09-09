@@ -11,7 +11,6 @@ import { CONTACT_INFO } from "./constants/contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import InteractiveMap from "./components/InteractiveMap";
 import WhatsAppIcon from "./components/WhatsAppIcon";
 
 // Direct Critical Import for Initial Page (Home View)
@@ -24,6 +23,9 @@ const AboutView = lazy(() => import("./views/AboutView"));
 const FaqView = lazy(() => import("./views/FaqView"));
 const ContactView = lazy(() => import("./views/ContactView"));
 const ArticlesView = lazy(() => import("./views/ArticlesView"));
+
+// Code-Split Map Component which is below-the-fold
+const InteractiveMap = lazy(() => import("./components/InteractiveMap"));
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>("home");
@@ -113,7 +115,9 @@ export default function App() {
       </main>
 
       {/* Interactive Google Map of Berlian Kontraktor (displayed at the bottom of EVERY section as requested) */}
-      <InteractiveMap />
+      <Suspense fallback={<div className="h-[450px] w-full flex items-center justify-center bg-[#FAF8F5] text-stone-400 text-xs font-bold uppercase tracking-widest border-t border-stone-200">Memuat Peta...</div>}>
+        <InteractiveMap />
+      </Suspense>
 
       {/* Modern footer with navigation links and WA handles */}
       <Footer setActiveTab={setActiveTab} />

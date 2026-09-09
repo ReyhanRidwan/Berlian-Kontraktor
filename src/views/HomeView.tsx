@@ -225,45 +225,33 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
         {/* Content Box (Centered & Highly Legible) */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
           {/* Top Badge: Tagline Design - Building - Maintenance */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+          <div
             className="mb-5 px-5 py-2 rounded-full bg-stone-900/80 backdrop-blur-md border border-white/20 shadow-lg inline-flex items-center gap-2"
             id="hero-badge"
           >
             <span className="text-xs sm:text-sm font-black text-white tracking-[0.2em] uppercase">
               Design - Building - Maintenance
             </span>
-          </motion.div>
+          </div>
 
-          {/* Main Title */}
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+          {/* Main Title - Rendered immediately with opacity: 1 and zero delay for instant LCP */}
+          <h1
             className="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-md tracking-tight leading-tight uppercase max-w-3xl"
             id="hero-main-title"
           >
             SOLUSI TERPERCAYA UNTUK KONSTRUKSI BANGUNAN & RENOVASI HUNIAN ANDA
-          </motion.h1>
+          </h1>
 
           {/* Sub-description */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+          <p
             className="mt-5 text-white drop-shadow-sm text-xs md:text-sm leading-relaxed max-w-2xl font-medium"
             id="hero-subtext"
           >
             Dari pembangunan gedung, rumah tinggal, hingga renovasi total, PT. Berlian Kontraktor siap mewujudkan bangunan yang kokoh, fungsional, dan bernilai tinggi.
-          </motion.p>
+          </p>
 
           {/* Free Perks Pills (Free Survei, Free Konsultasi, Free Design) */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.8 }}
+          <div
             className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
             id="hero-free-perks"
           >
@@ -279,13 +267,10 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0" />
               <span>Free Design</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.8 }}
+          <div
             className="mt-8"
             id="hero-cta-btn-wrapper"
           >
@@ -296,7 +281,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             >
               <span>Mulai Konsultasi Proyek →</span>
             </button>
-          </motion.div>
+          </div>
         </div>
 
         {/* Floating Indicator Dots for Slides */}
@@ -402,7 +387,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_662,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"
+                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"
                   alt="Renovasi Wisma EMS, Cisarua - Bogor"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -430,7 +415,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src={IMAGES.alunIndahCakung}
+                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_486,c_limit/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp"
                   alt="Proyek Renovasi Alun Indah Cakung"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
