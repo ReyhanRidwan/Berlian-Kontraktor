@@ -426,12 +426,12 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               </div>
             </div>
 
-            {/* Project 2: Renovasi Kantor - Cakung, Jakarta Timur */}
+            {/* Project 2: Proyek Renovasi Alun Indah Cakung */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src={IMAGES.kantorCakung}
-                  alt="Renovasi Kantor - Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia"
+                  src={IMAGES.alunIndahCakung}
+                  alt="Proyek Renovasi Alun Indah Cakung"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-md shadow-sm">
@@ -441,18 +441,14 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <h3 className="text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide group-hover:text-orange-600 transition-colors">
-                    Renovasi Kantor
+                    Proyek Renovasi Alun Indah Cakung
                   </h3>
-                  <div className="flex items-start gap-1.5 text-xs text-orange-600 font-bold mt-1.5 leading-snug">
-                    <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                    <span>Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia.</span>
-                  </div>
-                  <p className="text-stone-600 text-xs md:text-sm leading-relaxed mt-2.5 font-normal">
-                    Pekerjaan renovasi dan peremajaan gedung kantor di Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia dengan pengerjaan struktural, interior, dan tata ruang modern.
+                  <p className="text-stone-600 text-xs md:text-sm leading-relaxed mt-2 font-normal">
+                    Pekerjaan renovasi dan peremajaan menyeluruh Proyek Alun Indah di Cakung, Jakarta Timur dengan penataan struktural, estetika interior, serta standar pengerjaan konstruksi terbaik.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-stone-500">
-                  <span className="text-orange-600 font-extrabold">Renovasi Kantor & Komersial</span>
+                  <span className="text-orange-600 font-extrabold">Renovasi Bangunan & Komersial</span>
                   <span>Berlian Kontraktor</span>
                 </div>
               </div>

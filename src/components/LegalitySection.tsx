@@ -81,7 +81,7 @@ const DEFAULT_DOCUMENTS: LegalityDoc[] = [
     type: "Nomor Pokok Wajib Pajak",
     category: "Kepatuhan Pajak Negara",
     defaultImage: "",
-    accentColor: "from-amber-700 to-yellow-800",
+    accentColor: "from-slate-700 to-zinc-800",
     description: "Identitas kepatuhan perpajakan badan hukum yang terdaftar aktif dan taat administrasi fiskal."
   }
 ];
