@@ -43,6 +43,23 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
   const handleNavClick = (id: string) => {
     setActiveTab(id);
     setIsOpen(false);
+    
+    // Immediate scroll to top when mobile/desktop users navigate
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 60);
   };
 
   return (

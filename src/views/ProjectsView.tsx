@@ -70,14 +70,14 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
       description: "Pembangunan fasilitas gudang penyimpanan pupuk Albayu Farm dengan struktur baja tahan cuaca dan ventilasi optimal."
     },
     {
-      id: "renovasi-villa-teguh-puncak",
-      title: "Renovasi Villa Bpk Teguh, Puncak - Bogor",
-      location: "Puncak, Bogor",
+      id: "renovasi-kantor-cakung",
+      title: "Renovasi Kantor",
+      location: "Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia.",
       category: "Renovasi",
       shapeLabel: "Landscape",
       heightClass: "h-52 sm:h-56 md:h-60",
       image: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
-      description: "Peremajaan dan pengerjaan renovasi lanskap serta interior Villa Bpk Teguh di dataran tinggi Puncak Bogor."
+      description: "Pekerjaan renovasi dan peremajaan gedung kantor di Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia dengan pengerjaan struktural, interior, dan tata ruang modern."
     },
     {
       id: "renovasi-wisma-ems-cisarua",

@@ -25,7 +25,9 @@ export default function Footer({ setActiveTab }: FooterProps) {
 
   const handleLinkClick = (tabId: string) => {
     setActiveTab(tabId);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   const address = CONTACT_INFO.office.address;

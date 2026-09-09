@@ -26,6 +26,13 @@ export const CONTACT_INFO = {
     desc: "Bantuan informasi umum, administrasi proyek, dan layanan pelanggan aktif"
   },
 
+  // Floating Action Button WhatsApp (0857-1591-0161)
+  floatingButton: {
+    phone: "0857-1591-0161",
+    rawPhone: "085715910161",
+    waUrl: "https://wa.me/6285715910161?text=Halo%20Admin%20Berlian%20Kontraktor%2C%20saya%20ingin%20konsultasi%20proyek"
+  },
+
   // 3. Email Resmi
   email: {
     label: "Email Resmi",

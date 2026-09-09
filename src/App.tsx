@@ -97,13 +97,13 @@ export default function App() {
       {/* Persistent Floating WhatsApp Admin Button (Direct Connection) */}
       <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center" id="persistent-floating-wa-wrapper">
         <a
-          href={CONTACT_INFO.consultation.waUrl}
+          href={CONTACT_INFO.floatingButton.waUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white pl-3.5 pr-5 py-3 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.45)] hover:shadow-[0_14px_40px_rgba(37,211,102,0.65)] transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-white/40 cursor-pointer"
           id="btn-floating-whatsapp-admin"
-          title={`Chat WhatsApp Admin (${CONTACT_INFO.consultation.phone})`}
-          aria-label="Hubungi WhatsApp Admin"
+          title={`Chat WhatsApp Admin (${CONTACT_INFO.floatingButton.phone})`}
+          aria-label={`Hubungi WhatsApp Admin ${CONTACT_INFO.floatingButton.phone}`}
         >
           <div className="relative flex items-center justify-center">
             <span className="absolute -inset-1 rounded-full bg-white/40 animate-ping opacity-75 pointer-events-none" />

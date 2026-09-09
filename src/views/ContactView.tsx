@@ -127,22 +127,15 @@ export default function ContactView() {
                     <p className="text-[11px] text-stone-500 leading-snug">
                       Perhitungan RAB, konsultasi arsitektur, survey lokasi gratis, & estimasi proyek.
                     </p>
-                    <div className="flex items-center gap-2 pt-1.5">
+                    <div className="pt-2">
                       <a
                         href={CONTACT_INFO.consultation.waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[10.5px] font-extrabold text-white bg-[#25D366] hover:bg-[#20bd5a] px-3 py-1.5 rounded-md transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-[#25D366] hover:bg-[#20bd5a] px-3.5 py-2 rounded-lg transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
                       >
-                        <WhatsAppIcon className="w-3.5 h-3.5" />
+                        <WhatsAppIcon className="w-4 h-4 fill-current" />
                         <span>Chat WhatsApp Admin</span>
-                      </a>
-                      <a
-                        href={CONTACT_INFO.consultation.telUrl}
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1.5 rounded-md transition-colors border border-stone-200"
-                      >
-                        <Phone className="w-3 h-3 text-stone-600" />
-                        <span>Telepon</span>
                       </a>
                     </div>
                   </div>
@@ -155,7 +148,7 @@ export default function ContactView() {
                   <div className="p-2.5 bg-blue-600/10 rounded-lg text-blue-600 border border-blue-500/20 shrink-0 mt-0.5">
                     <Headphones className="w-5 h-5 text-blue-600" />
                   </div>
-                  <div className="space-y-1 flex-1">
+                  <div className="space-y-1 flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-[10px] text-blue-700 uppercase font-extrabold tracking-wider bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                         💬 Layanan Pelanggan (CS)
@@ -174,22 +167,15 @@ export default function ContactView() {
                     <p className="text-[11px] text-stone-500 leading-snug">
                       Informasi administrasi kerja sama, bantuan umum, & pelayanan klien aktif.
                     </p>
-                    <div className="flex items-center gap-2 pt-1.5">
+                    <div className="pt-2">
                       <a
                         href={CONTACT_INFO.customerService.waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[10.5px] font-extrabold text-white bg-[#25D366] hover:bg-[#20bd5a] px-3 py-1.5 rounded-md transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-[#25D366] hover:bg-[#20bd5a] px-3.5 py-2 rounded-lg transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
                       >
-                        <WhatsAppIcon className="w-3.5 h-3.5" />
+                        <WhatsAppIcon className="w-4 h-4 fill-current" />
                         <span>Chat WhatsApp CS</span>
-                      </a>
-                      <a
-                        href={CONTACT_INFO.customerService.telUrl}
-                        className="inline-flex items-center gap-1 text-[10.5px] font-extrabold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1.5 rounded-md transition-colors border border-stone-200"
-                      >
-                        <Phone className="w-3 h-3 text-stone-600" />
-                        <span>Telepon</span>
                       </a>
                     </div>
                   </div>
@@ -202,13 +188,13 @@ export default function ContactView() {
                   <div className="p-2.5 bg-amber-50 rounded-lg text-orange-600 border border-stone-200 shrink-0 mt-0.5">
                     <Mail className="w-5 h-5 text-orange-600" />
                   </div>
-                  <div className="space-y-1 flex-1">
+                  <div className="space-y-1 flex-1 min-w-0">
                     <span className="text-[10px] text-stone-500 uppercase block font-extrabold tracking-wider">
                       📧 Email Resmi Perusahaan
                     </span>
                     <a
                       href={CONTACT_INFO.email.mailtoUrl}
-                      className="font-black text-stone-900 text-sm hover:text-orange-600 transition-colors block"
+                      className="font-black text-stone-900 text-sm hover:text-orange-600 transition-colors block break-all [overflow-wrap:anywhere] leading-snug"
                     >
                       {CONTACT_INFO.email.address}
                     </a>
@@ -225,11 +211,11 @@ export default function ContactView() {
                   <div className="p-2.5 bg-amber-50 rounded-lg text-orange-600 border border-stone-200 shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5 text-orange-600" />
                   </div>
-                  <div className="space-y-1 flex-1">
+                  <div className="space-y-1 flex-1 min-w-0">
                     <span className="text-[10px] text-stone-500 uppercase block font-extrabold tracking-wider">
                       📍 Alamat Fisik Kantor
                     </span>
-                    <span className="font-extrabold text-stone-900 text-xs leading-relaxed block">
+                    <span className="font-extrabold text-stone-900 text-xs leading-relaxed block break-words [overflow-wrap:anywhere]">
                       {address}
                     </span>
                     <span className="text-[10px] text-stone-500 block leading-tight pt-0.5 italic font-medium">

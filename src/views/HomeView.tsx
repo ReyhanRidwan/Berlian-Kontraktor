@@ -198,8 +198,8 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
           </AnimatePresence>
         </div>
 
-        {/* Contrast Scrim to enhance text readability over all slide photos */}
-        <div className="absolute inset-0 bg-stone-950/30 backdrop-brightness-[0.88] z-[2] pointer-events-none" />
+        {/* Lapisan hitam lembut 60% agar gambar latar belakang tetap terlihat dengan efek gelap yang lebih solid */}
+        <div className="absolute inset-0 bg-black/60 z-[2] pointer-events-none" id="hero-dark-overlay" />
 
         {/* Previous & Next Navigation Arrows */}
         <button
@@ -242,7 +242,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-orange-600 drop-shadow-md tracking-tight leading-tight uppercase max-w-3xl"
+            className="text-2xl sm:text-3.5xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-md tracking-tight leading-tight uppercase max-w-3xl"
             id="hero-main-title"
           >
             SOLUSI TERPERCAYA UNTUK KONSTRUKSI BANGUNAN & RENOVASI HUNIAN ANDA
@@ -426,29 +426,33 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               </div>
             </div>
 
-            {/* Project 2: Renovasi Villa Bpk Teguh, Puncak - Bogor */}
+            {/* Project 2: Renovasi Kantor - Cakung, Jakarta Timur */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src={IMAGES.villaTeguh}
-                  alt="Renovasi Villa Bpk Teguh, Puncak - Bogor"
+                  src={IMAGES.kantorCakung}
+                  alt="Renovasi Kantor - Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-md shadow-sm">
-                  Puncak, Bogor
+                  Cakung, Jakarta Timur
                 </div>
               </div>
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <h3 className="text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide group-hover:text-orange-600 transition-colors">
-                    Renovasi Villa Bpk Teguh, Puncak - Bogor
+                    Renovasi Kantor
                   </h3>
-                  <p className="text-stone-600 text-xs md:text-sm leading-relaxed mt-2 font-normal">
-                    Proyek remodelling dan peremajaan villa peristirahatan di Puncak, Bogor. Mengoptimalkan tata ruang, pencahayaan alami, serta material finishing berkualitas tinggi yang tahan cuaca dingin.
+                  <div className="flex items-start gap-1.5 text-xs text-orange-600 font-bold mt-1.5 leading-snug">
+                    <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                    <span>Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia.</span>
+                  </div>
+                  <p className="text-stone-600 text-xs md:text-sm leading-relaxed mt-2.5 font-normal">
+                    Pekerjaan renovasi dan peremajaan gedung kantor di Jl. P. Komarudin Km. 23, Cakung, Jakarta Timur, Indonesia dengan pengerjaan struktural, interior, dan tata ruang modern.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-stone-500">
-                  <span className="text-orange-600 font-extrabold">Renovasi Villa & Hunian</span>
+                  <span className="text-orange-600 font-extrabold">Renovasi Kantor & Komersial</span>
                   <span>Berlian Kontraktor</span>
                 </div>
               </div>
@@ -639,19 +643,19 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
       </section>
 
       {/* 7. HIGH CONVERSION CTA PANEL */}
-      <section className="py-20 bg-orange-600 relative overflow-hidden" id="convert-cta-section">
+      <section className="py-20 bg-gradient-to-br from-slate-200 via-stone-200 to-zinc-300 border-y border-stone-300/80 relative overflow-hidden" id="convert-cta-section">
         {/* Abstract design elements */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/10 skew-x-12 transform origin-top-right pointer-events-none" />
-        <div className="absolute left-10 bottom-0 w-24 h-24 rounded-full bg-black/10 blur-xl pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/30 skew-x-12 transform origin-top-right pointer-events-none" />
+        <div className="absolute left-10 bottom-0 w-24 h-24 rounded-full bg-slate-400/20 blur-xl pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
-          <span className="text-stone-900 font-black tracking-widest text-xs uppercase bg-white px-3 py-1.5 rounded-full mb-4 shadow-sm">
+          <span className="text-stone-900 font-black tracking-widest text-xs uppercase bg-white/90 border border-stone-300 px-3.5 py-1.5 rounded-full mb-4 shadow-xs">
             KONSULTASI GRATIS & SURVEI LOKASI
           </span>
-          <h2 className="text-2xl md:text-3.5xl font-black text-white tracking-tight uppercase max-w-2xl leading-tight">
+          <h2 className="text-2xl md:text-3.5xl font-black text-stone-900 tracking-tight uppercase max-w-2xl leading-tight">
             INGIN MEMULAI PROYEK HUNIAN DI JAKARTA & JABODETABEK? KAMI SIAP MEMBANTU SEKARANG JUGA!
           </h2>
-          <p className="text-orange-100 text-xs md:text-sm mt-4 max-w-xl">
+          <p className="text-stone-700 text-xs md:text-sm mt-4 max-w-xl font-medium leading-relaxed">
             Survei lokasi, pengukuran tanah kasar, dan konsultasi blueprint awal tidak kami pungut biaya sepeser pun. Klik tombol di bawah untuk pesan waktu survei.
           </p>
 
@@ -660,7 +664,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
               href={CONTACT_INFO.consultation.waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-8 py-4 rounded-full transition-all tracking-wider shadow-xl inline-flex items-center gap-2.5 hover:scale-105 active:scale-95 border-2 border-white/20"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-8 py-4 rounded-full transition-all tracking-wider shadow-xl inline-flex items-center gap-2.5 hover:scale-105 active:scale-95 border-2 border-white/40"
               id="btn-cta-wa"
             >
               <WhatsAppIcon className="w-5 h-5 fill-current text-white" />
@@ -668,7 +672,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             </a>
             <button
               onClick={() => handleLinkClick("contact")}
-              className="border border-white/80 hover:border-stone-900 text-white hover:text-stone-900 hover:bg-white/90 font-extrabold text-xs uppercase px-8 py-4 rounded-full transition-all"
+              className="border border-stone-400 hover:border-stone-900 text-stone-900 hover:bg-white bg-white/70 font-extrabold text-xs uppercase px-8 py-4 rounded-full transition-all shadow-sm"
               id="btn-cta-contact-home"
             >
               Formulir Pertanyaan &rarr;
