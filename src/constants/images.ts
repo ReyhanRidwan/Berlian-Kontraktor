@@ -31,23 +31,23 @@ export function optimizeCloudinaryUrl(url: string): string {
 
 export const IMAGES = {
   // Company Logo (Fully Transparent with Cloudinary AI background removal)
-  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_252,e_background_removal/v1788884322/02347409-c2f7-4734-abfd-4a8d3b12d0be-removebg-preview_yvwivx.png",
+  companyLogo: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,e_background_removal/v1788884322/02347409-c2f7-4734-abfd-4a8d3b12d0be-removebg-preview_yvwivx.png",
 
   // Hero section - Extreme Speed Optimized for LCP & CLS (Google Ads & PageSpeed)
   heroSlide1: {
     raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
     desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
-    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:low,w_500,c_scale/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
   },
   heroSlide2: {
     raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
     desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
-    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:low,w_500,c_scale/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859555/f73ff313-53cb-451b-aa8b-d784dd37b886.png",
   },
   heroSlide3: {
     raw: "https://res.cloudinary.com/di6ziqvtp/image/upload/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
     desktop: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
-    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:low,w_500,c_scale/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
+    mobile: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_600,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
   },
 
   hero1: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859529/72394245-35d3-4c11-9615-f92c9f2e8aba.png",
@@ -55,7 +55,7 @@ export const IMAGES = {
   hero3: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:eco,w_1400,c_limit/v1788859568/f7a99f3c-e65e-48d7-a41b-5502ab36e8f4.png",
 
   // Featured Projects in Home (from projects documentation)
-  wismaEms: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:low,w_378,c_scale/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp",
+  wismaEms: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp",
   villaTeguh: optimizeCloudinaryUrl("https://res.cloudinary.com/di6ziqvtp/image/upload/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"),
   kantorCakung: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_486,c_limit/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",
   alunIndahCakung: "https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_486,c_limit/v1785151712/Proyek_renovasi_Alun_Indah_-_cakung_gs1ovh.webp",

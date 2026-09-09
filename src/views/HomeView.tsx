@@ -387,7 +387,7 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto:low,w_378,c_scale/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"
+                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"
                   alt="Renovasi Wisma EMS, Cisarua - Bogor"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
