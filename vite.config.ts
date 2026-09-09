@@ -5,10 +5,42 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'vite-plugin-perf-optimization',
+        transformIndexHtml(html) {
+          // Ensure JS scripts load with defer attribute to eliminate render blocking
+          return html.replace(
+            /<script type="module" crossorigin src="([^"]+)"><\/script>/g,
+            '<script type="module" defer crossorigin src="$1"></script>'
+          );
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+      },
+    },
+    build: {
+      cssCodeSplit: true,
+      minify: 'esbuild',
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('react') || id.includes('react-dom') || id.includes('motion')) {
+                return 'vendor-framework';
+              }
+              if (id.includes('lucide-react')) {
+                return 'vendor-icons';
+              }
+              return 'vendor-utils';
+            }
+          },
+        },
       },
     },
     server: {

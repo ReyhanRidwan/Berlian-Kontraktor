@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { CONTACT_INFO } from "./constants/contact";
 
@@ -14,20 +14,22 @@ import ScrollToTop from "./components/ScrollToTop";
 import InteractiveMap from "./components/InteractiveMap";
 import WhatsAppIcon from "./components/WhatsAppIcon";
 
-// Views
+// Direct Critical Import for Initial Page (Home View)
 import HomeView from "./views/HomeView";
-import ProjectsView from "./views/ProjectsView";
-import ServicesView from "./views/ServicesView";
-import AboutView from "./views/AboutView";
-import FaqView from "./views/FaqView";
-import ContactView from "./views/ContactView";
-import ArticlesView from "./views/ArticlesView";
+
+// Code-Split / Lazy-Loaded Secondary Views for Optimal Performance & Splitting
+const ProjectsView = lazy(() => import("./views/ProjectsView"));
+const ServicesView = lazy(() => import("./views/ServicesView"));
+const AboutView = lazy(() => import("./views/AboutView"));
+const FaqView = lazy(() => import("./views/FaqView"));
+const ContactView = lazy(() => import("./views/ContactView"));
+const ArticlesView = lazy(() => import("./views/ArticlesView"));
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>("home");
   const [selectedArticle, setSelectedArticle] = useState<string | null>(null);
 
-  // Helper page renderer
+  // Helper page renderer with Suspense for split views
   const renderActiveView = () => {
     switch (activeTab) {
       case "home":
@@ -38,21 +40,43 @@ export default function App() {
           />
         );
       case "projects":
-        return <ProjectsView setActiveTab={setActiveTab} />;
+        return (
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Proyek...</div>}>
+            <ProjectsView setActiveTab={setActiveTab} />
+          </Suspense>
+        );
       case "services":
-        return <ServicesView />;
+        return (
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Layanan...</div>}>
+            <ServicesView />
+          </Suspense>
+        );
       case "about":
-        return <AboutView />;
+        return (
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Profil...</div>}>
+            <AboutView />
+          </Suspense>
+        );
       case "faq":
-        return <FaqView />;
+        return (
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Tanya Jawab...</div>}>
+            <FaqView />
+          </Suspense>
+        );
       case "contact":
-        return <ContactView />;
+        return (
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Kontak...</div>}>
+            <ContactView />
+          </Suspense>
+        );
       case "articles":
         return (
-          <ArticlesView
-            selectedArticle={selectedArticle}
-            setSelectedArticle={setSelectedArticle}
-          />
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-stone-400 text-xs font-bold uppercase tracking-widest">Memuat Artikel...</div>}>
+            <ArticlesView
+              selectedArticle={selectedArticle}
+              setSelectedArticle={setSelectedArticle}
+            />
+          </Suspense>
         );
       default:
         return (
