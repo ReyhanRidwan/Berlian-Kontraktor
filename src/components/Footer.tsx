@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Phone, Mail, MapPin, ArrowUpRight, Instagram, Headphones } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Instagram, Headphones } from "lucide-react";
 import { IMAGES } from "../constants/images";
 import { CONTACT_INFO } from "../constants/contact";
 
@@ -149,24 +149,6 @@ export default function Footer({ setActiveTab }: FooterProps) {
                 <span className="leading-relaxed text-stone-700 font-medium text-[11.5px]">
                   {address}
                 </span>
-              </div>
-              
-              {/* Konsultasi Proyek */}
-              <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] text-stone-500 font-extrabold uppercase block tracking-wider">
-                    Konsultasi & Estimasi:
-                  </span>
-                  <a
-                    href={CONTACT_INFO.consultation.waUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-orange-600 text-stone-900 font-black text-xs transition-colors"
-                  >
-                    {CONTACT_INFO.consultation.phone}
-                  </a>
-                </div>
               </div>
 
               {/* CS */}

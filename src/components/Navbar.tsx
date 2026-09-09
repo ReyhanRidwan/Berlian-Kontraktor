@@ -5,10 +5,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Phone } from "lucide-react";
-import WhatsAppIcon from "./WhatsAppIcon";
+import { Menu, X } from "lucide-react";
 import { IMAGES } from "../constants/images";
-import { CONTACT_INFO } from "../constants/contact";
 
 interface NavbarProps {
   activeTab: string;
@@ -107,21 +105,6 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
             ))}
           </div>
 
-          {/* Call-to-Action WhatsApp Hub Button */}
-          <div className="hidden lg:block">
-            <a
-              href={CONTACT_INFO.consultation.waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-black uppercase tracking-widest py-2.5 px-5 rounded-full border border-emerald-500/50 transition-all shadow-md group"
-              id="cta-wa-nav"
-              title="Hubungi WhatsApp Admin"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-current text-white" />
-              <span>WA {CONTACT_INFO.consultation.phone}</span>
-            </a>
-          </div>
-
           {/* Mobile hamburger button */}
           <div className="md:hidden flex items-center">
             <button
@@ -162,18 +145,6 @@ export default function Navbar({ activeTab, setActiveTab }: NavbarProps) {
                   {item.label}
                 </button>
               ))}
-              <div className="pt-4 border-t border-stone-200">
-                <a
-                  href={CONTACT_INFO.consultation.waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs py-3.5 rounded-xl uppercase tracking-wider transition-all shadow-md"
-                  id="cta-wa-nav-mobile"
-                >
-                  <WhatsAppIcon className="w-4 h-4 fill-current text-white" />
-                  <span>HUBUNGI WHATSAPP ADMIN ({CONTACT_INFO.consultation.phone})</span>
-                </a>
-              </div>
             </div>
           </motion.div>
         )}

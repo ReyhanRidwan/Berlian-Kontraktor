@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { MapPin, Phone, ExternalLink, Compass, Navigation, Headphones } from "lucide-react";
+import { MapPin, ExternalLink, Compass, Navigation, Headphones } from "lucide-react";
 import { CONTACT_INFO } from "../constants/contact";
 
 export default function InteractiveMap() {
@@ -151,15 +151,6 @@ export default function InteractiveMap() {
             </div>
 
             <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-2.5">
-              <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                <Phone className="w-4 h-4 text-orange-600 shrink-0" />
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="text-[10px] uppercase font-bold text-stone-500">Konsultasi:</span>
-                  <a href={CONTACT_INFO.consultation.waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 font-extrabold text-stone-900">
-                    {CONTACT_INFO.consultation.phone}
-                  </a>
-                </div>
-              </div>
               <div className="flex items-center gap-2.5 text-xs text-stone-700">
                 <Headphones className="w-4 h-4 text-blue-600 shrink-0" />
                 <div className="flex items-center gap-1.5 flex-wrap">

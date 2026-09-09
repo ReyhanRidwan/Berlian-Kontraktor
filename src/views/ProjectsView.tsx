@@ -439,13 +439,13 @@ export default function ProjectsView({ setActiveTab }: ProjectsViewProps) {
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
-              href={CONTACT_INFO.consultation.waUrl}
+              href={CONTACT_INFO.customerService.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-orange-600 hover:bg-orange-700 text-white font-black text-xs py-3.5 px-8 rounded-full uppercase tracking-wider transition-all shadow-md"
               id="cta-portfolio-wa-btn"
             >
-              <span>Konsultasi via WhatsApp ({CONTACT_INFO.consultation.phone})</span>
+              <span>Konsultasi via WhatsApp</span>
             </a>
             <button
               onClick={() => {

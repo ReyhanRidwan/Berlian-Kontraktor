@@ -657,14 +657,14 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href={CONTACT_INFO.consultation.waUrl}
+              href={CONTACT_INFO.customerService.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-8 py-4 rounded-full transition-all tracking-wider shadow-xl inline-flex items-center gap-2.5 hover:scale-105 active:scale-95 border-2 border-white/40"
               id="btn-cta-wa"
             >
               <WhatsAppIcon className="w-5 h-5 fill-current text-white" />
-              <span>Hubungi via WhatsApp ({CONTACT_INFO.consultation.phone})</span>
+              <span>Hubungi via WhatsApp</span>
             </a>
             <button
               onClick={() => handleLinkClick("contact")}

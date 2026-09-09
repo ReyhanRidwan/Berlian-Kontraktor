@@ -4,18 +4,7 @@
  */
 
 export const CONTACT_INFO = {
-  // 1. Konsultasi Proyek & Estimasi Biaya
-  consultation: {
-    label: "Konsultasi Proyek & Estimasi Biaya",
-    phone: "0811-1820-249",
-    rawPhone: "08111820249",
-    intlPhone: "+62 811-1820-249",
-    telUrl: "tel:08111820249",
-    waUrl: "https://wa.me/628111820249?text=Halo%20Berlian%20Kontraktor,%20saya%20tertarik%20untuk%20konsultasi%20proyek%20dan%20estimasi%20biaya",
-    desc: "Layanan perhitungan RAB, survey lokasi, dan perencanaan arsitektur/konstruksi"
-  },
-
-  // 2. Layanan Pelanggan (CS)
+  // 1. Layanan Pelanggan (CS)
   customerService: {
     label: "Layanan Pelanggan (CS)",
     phone: "0857-1591-0161",

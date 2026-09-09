@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram, Calculator, Headphones } from "lucide-react";
+import { Mail, MapPin, CheckCircle2, MessageSquare, Compass, ExternalLink, Instagram, Calculator, Headphones } from "lucide-react";
 import OptimizedImage from "../components/OptimizedImage";
 import WhatsAppIcon from "../components/WhatsAppIcon";
 import { CONTACT_INFO } from "../constants/contact";
@@ -54,8 +54,8 @@ export default function ContactView() {
 - Ukuran Proyek: ${formData.size || "-"} m²
 - Detail Pesan: ${formData.message}`;
 
-    // Redirect to Whatsapp Konsultasi Proyek & Estimasi Biaya
-    window.open(`https://wa.me/628111820249?text=${encodeURIComponent(text)}`, "_blank");
+    // Redirect to Whatsapp Layanan Pelanggan (CS)
+    window.open(`https://wa.me/62${CONTACT_INFO.customerService.rawPhone.replace(/^0/, "")}?text=${encodeURIComponent(text)}`, "_blank");
     
     setIsSubmitted(true);
     setFormData({ name: "", phone: "", service: "Bangun Baru", message: "", size: "" });
@@ -102,47 +102,7 @@ export default function ContactView() {
             </p>
 
             <div className="space-y-4 text-xs text-stone-700">
-              {/* 1. Konsultasi Proyek & Estimasi Biaya */}
-              <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs hover:border-orange-500/40 transition-colors">
-                <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 bg-orange-600/10 rounded-lg text-orange-600 border border-orange-500/20 shrink-0 mt-0.5">
-                    <Phone className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <div className="space-y-1 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] text-orange-700 uppercase font-extrabold tracking-wider bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
-                        📞 Konsultasi Proyek & Estimasi Biaya
-                      </span>
-                    </div>
-                    <div className="flex items-baseline gap-2 pt-0.5">
-                      <a
-                        href={CONTACT_INFO.consultation.waUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-black text-stone-900 text-base hover:text-orange-600 transition-colors"
-                      >
-                        {CONTACT_INFO.consultation.phone}
-                      </a>
-                    </div>
-                    <p className="text-[11px] text-stone-500 leading-snug">
-                      Perhitungan RAB, konsultasi arsitektur, survey lokasi gratis, & estimasi proyek.
-                    </p>
-                    <div className="pt-2">
-                      <a
-                        href={CONTACT_INFO.consultation.waUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-[#25D366] hover:bg-[#20bd5a] px-3.5 py-2 rounded-lg transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
-                      >
-                        <WhatsAppIcon className="w-4 h-4 fill-current" />
-                        <span>Chat WhatsApp Admin</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 2. Layanan Pelanggan (CS) */}
+              {/* Layanan Pelanggan (CS) */}
               <div className="p-3.5 bg-white rounded-xl border border-stone-200/90 shadow-xs hover:border-orange-500/40 transition-colors">
                 <div className="flex items-start gap-3.5">
                   <div className="p-2.5 bg-blue-600/10 rounded-lg text-blue-600 border border-blue-500/20 shrink-0 mt-0.5">
@@ -383,13 +343,13 @@ export default function ContactView() {
                   </button>
 
                   <a
-                    href={CONTACT_INFO.consultation.waUrl}
+                    href={CONTACT_INFO.customerService.waUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 border border-emerald-600/30 hover:bg-emerald-50 text-emerald-800 font-extrabold text-[11px] py-2.5 px-4 rounded-xl transition-all"
                   >
                     <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                    <span>Atau Chat Langsung WhatsApp Admin Tanpa Isi Formulir</span>
+                    <span>Atau Chat Langsung WhatsApp Layanan Pelanggan (CS) Tanpa Isi Formulir</span>
                   </a>
                 </div>
 

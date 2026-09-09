@@ -136,13 +136,13 @@ export default function FaqView() {
           </p>
           <div className="mt-6">
             <a
-              href={CONTACT_INFO.consultation.waUrl}
+              href={CONTACT_INFO.customerService.waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white text-xs font-black uppercase tracking-wider px-6 py-3 rounded-lg shadow-md transition-all"
               id="faq-whatsapp-redirection"
             >
-              <span>Tanya Kontraktor via WA ({CONTACT_INFO.consultation.phone})</span>
+              <span>Tanya Kontraktor via WhatsApp</span>
             </a>
           </div>
         </div>
