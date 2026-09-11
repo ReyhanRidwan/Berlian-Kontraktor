@@ -383,25 +383,25 @@ export default function HomeView({ setActiveTab, setSelectedArticle }: HomeViewP
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="featured-projects-grid">
-            {/* Project 1: Renovasi Wisma EMS, Cisarua - Bogor */}
+            {/* Project 1: Renovasi Villa Bpk Teguh, Puncak - Bogor */}
             <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col group">
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                 <img
-                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152665/Renovasi_Wisma_EMS_Cisarua_-_Bogor_iqaytg.webp"
-                  alt="Renovasi Wisma EMS, Cisarua - Bogor"
+                  src="https://res.cloudinary.com/di6ziqvtp/image/upload/f_auto,q_auto,w_378,c_limit/v1785152572/Renovasi_Villa_Bpk_Teguh_Puncak_-_Bogor_bt5btu.webp"
+                  alt="Renovasi Villa Bpk Teguh, Puncak - Bogor"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-md shadow-sm">
-                  Cisarua, Bogor
+                  Puncak, Bogor
                 </div>
               </div>
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <h3 className="text-lg md:text-xl font-black text-stone-900 uppercase tracking-wide group-hover:text-orange-600 transition-colors">
-                    Renovasi Wisma EMS, Cisarua - Bogor
+                    Renovasi Villa Bpk Teguh, Puncak - Bogor
                   </h3>
                   <p className="text-stone-600 text-xs md:text-sm leading-relaxed mt-2 font-normal">
-                    Pekerjaan peremajaan dan renovasi komprehensif bangunan Wisma EMS di Cisarua, Bogor. Mencakup perbaikan atap, penataan ulang fasad interior-eksterior, serta penguatan struktur bangunan.
+                    Pekerjaan renovasi dan peremajaan menyeluruh Villa Bpk Teguh di dataran tinggi Puncak, Bogor dengan sentuhan arsitektur modern yang harmonis dengan alam sekitar.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-stone-500">
